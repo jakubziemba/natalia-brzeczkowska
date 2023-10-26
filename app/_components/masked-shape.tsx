@@ -19,6 +19,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
       xmlns='http://www.w3.org/2000/svg'
       initial={{
         opacity: 0,
+        transform: 'rotate(-8.2deg)',
       }}
       animate={{
         opacity: 1,
@@ -38,7 +39,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
               d: [...paths, paths[0]],
             }}
             transition={{
-              duration: 5,
+              duration: 8,
               repeat: Infinity,
               repeatType: 'loop',
               ease: 'easeInOut',
