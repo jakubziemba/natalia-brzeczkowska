@@ -15,8 +15,9 @@ export default function StarAnimated({ className }: StarAnimatedProps) {
         transition: {
           type: 'spring',
           bounce: 0,
-          duration: 3.05,
+          duration: 3,
           repeat: Infinity,
+          delay: 2,
         },
       }}
       className={`${className}`}
