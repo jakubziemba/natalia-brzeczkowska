@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useWindowSize } from 'usehooks-ts';
 
 const initialPath =
   'M173.672 36.6782C205.404 26.9262 233.41 74.3913 266.148 83.4188C301.37 93.1312 339.899 71.3933 372.304 91.4514C404.563 111.419 437.993 149.144 440.621 191.414C443.624 239.712 406.27 275.009 386.249 315.716C374.438 339.729 354.86 357.032 346.347 383.089C338.057 408.461 349.777 441.119 337.766 464.114C325.735 487.147 297.067 488.817 281.071 508.053C253.56 541.136 249.149 632.144 210.203 617.517C165.07 600.565 193.986 500.057 158.406 461.981C134.602 436.508 88.7921 489.874 65.9657 463.161C44.6791 438.251 76.2954 395.945 72.5286 361.485C69.4548 333.365 41.5462 309.604 46.1946 282.288C50.9289 254.467 85.1107 249.06 95.9093 224.089C108.096 195.908 99.8672 159.327 111.665 130.895C126.732 94.5822 140.393 46.9056 173.672 36.6782Z';
@@ -10,10 +11,12 @@ const finalPath =
 const paths = [initialPath, finalPath];
 
 export default function MaskedShape({ width, image }: MaskedShapeProps) {
+  const { height } = useWindowSize();
+  const svgHeight = height - 150;
   return (
     <motion.svg
       width={width}
-      height={673}
+      height={svgHeight}
       viewBox='0 0 500 640'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
@@ -23,10 +26,12 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
       }}
       animate={{
         opacity: 1,
+        scale: 1,
       }}
       transition={{
         duration: 1.2,
-        ease: 'easeInOut',
+        delay: 0,
+        ease: [0.14, 0.18, 0.21, 0.72],
       }}
     >
       <defs>
@@ -35,14 +40,25 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
             fillRule='evenodd'
             clipRule='evenodd'
             fill='white'
+            initial={{ scale: 0.8 }}
             animate={{
               d: [...paths, paths[0]],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              repeatType: 'loop',
-              ease: 'easeInOut',
+              scale: 1,
+              transition: {
+                d: {
+                  duration: 9,
+                  delay: 0.1,
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  // ease: [0.3, 0.1, 0.6, 0.1],
+                  ease: 'easeInOut',
+                },
+                scale: {
+                  duration: 1.5,
+                  // ease: [0.3, 0.1, 0.6, 0.8],
+                  ease: 'easeOut',
+                },
+              },
             }}
           />
         </mask>
