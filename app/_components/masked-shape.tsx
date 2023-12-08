@@ -46,7 +46,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
               scale: 1,
               transition: {
                 d: {
-                  duration: 12,
+                  duration: 13,
                   delay: 0.1,
                   repeat: Infinity,
                   repeatType: 'loop',
