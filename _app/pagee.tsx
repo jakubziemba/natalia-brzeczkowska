@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
-import MaskedShape from './_components/masked-shape';
-import Heading from './_components/heading';
-import StarAnimated from './_components/star/star-animated';
+import MaskedShape from '../_components/masked-shape';
+import Heading from '../_components/heading';
+import StarAnimated from '../_components/star/star-animated';
 import { motion } from 'framer-motion';
 
 const shapeSize = {
