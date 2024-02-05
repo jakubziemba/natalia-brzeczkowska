@@ -1,8 +1,7 @@
-import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
 import { client } from "../../sanity/lib/client";
-import Layout from "../../_components/layout";
 import { groq } from "next-sanity";
+import Image from "next/image";
+import Layout from "../../_components/layout";
 
 export async function getStaticProps() {
   const data = await client.fetch(groq`*[_type == "music-video"]{
