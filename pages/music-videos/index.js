@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
-import { client } from "../../utils/sanity-client";
+import { client } from "../../sanity/lib/client";
 import Layout from "../../_components/layout";
 
 export async function getStaticProps() {
@@ -8,7 +8,6 @@ export async function getStaticProps() {
     ...,
     "videoPlaceholder": videoPlaceholder.asset->url
   }`);
-  console.log(data);
 
   return {
     props: {
@@ -18,7 +17,6 @@ export async function getStaticProps() {
 }
 
 export default function MusicVideos({ data }) {
-  console.log(data);
   return (
     <Layout>
       <section>
