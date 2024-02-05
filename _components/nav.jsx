@@ -10,8 +10,11 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="grid grid-cols-12 gap-2 bg-transparent pt-6 font-sans font-light">
-      <ul className="col-start-8 flex flex-col gap-1 text-sm">
+    <nav className="fixed top-0 z-20 grid w-full grid-cols-12 gap-2 bg-transparent px-32 py-6 font-sans font-light">
+      <Link href="/" className="col-start-1 font-normal text-red">
+        NB
+      </Link>
+      <ul className="col-span-full col-start-8 flex gap-4 text-sm">
         {links.map((link, index) => (
           <li key={index}>
             <Link href={link.href}>{link.label}</Link>

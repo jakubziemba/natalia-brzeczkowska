@@ -1,3 +1,8 @@
+import Layout from "@/_components/layout";
 export default function Commercials() {
-  return <div>Commercials</div>;
+  return (
+    <Layout>
+      <section>Commercials</section>
+    </Layout>
+  );
 }

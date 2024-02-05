@@ -1,12 +1,16 @@
 import Nav from "./nav";
-// import Footer from './footer'
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Layout({ children }) {
   return (
-    <div className="h-screen ">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.4 } }}
+      exit={{ opacity: 0 }}
+      className="h-screen overflow-hidden"
+    >
       <Nav />
-      <main className="h-full">{children}</main>
-      {/* <Footer /> */}
-    </div>
+      {children}
+    </motion.main>
   );
 }

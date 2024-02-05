@@ -16,9 +16,17 @@
   }
 } */
 
+:root {
+  --nav-height: 72px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
     rgb(var(--background-start-rgb));
   font-smooth: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -34,4 +42,14 @@ svg {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  .grid-12-cols {
+    @apply grid grid-cols-12 gap-2;
+  }
+}
+
+main > section {
+  margin-top: var(--nav-height);
 }

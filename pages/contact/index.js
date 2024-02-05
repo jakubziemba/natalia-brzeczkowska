@@ -1,3 +1,9 @@
+import Layout from "@/_components/layout";
+
 export default function Contact() {
-  return <div>This is contact page!</div>;
+  return (
+    <Layout>
+      <section>This is contact page!</section>
+    </Layout>
+  );
 }
