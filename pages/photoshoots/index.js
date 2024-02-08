@@ -37,8 +37,9 @@ export default function Photoshoots({ data }) {
                   src={imageUrl}
                   width={1000}
                   height={500}
-                  index={index}
-                  alt={session.name}
+                  quality={80}
+                  alt={session.name || "photosession"}
+                  sizes="(min-width: 1024px) 70vw"
                 />
               </div>
             ));
