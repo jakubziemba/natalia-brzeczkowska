@@ -10,7 +10,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="fixed top-0 z-20 grid w-full grid-cols-12 gap-2 bg-transparent px-32 py-6 font-sans font-light">
+    <nav className="sticky top-0 z-20 grid w-full grid-cols-12 gap-2 bg-transparent px-32 py-6 font-sans font-light">
       <Link href="/" className="col-start-1 font-normal text-red">
         NB
       </Link>
