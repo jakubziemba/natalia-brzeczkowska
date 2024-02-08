@@ -19,32 +19,38 @@ export async function getStaticProps() {
 export default function MusicVideos({ data }) {
   return (
     <Layout>
-      <section>
+      <section className="h-screen">
         <div className="mt-20 flex justify-center">
           <h1 className="col-span-full col-start-6 font-serif text-6xl">
             Music Videos
           </h1>
         </div>
-        <div className="flex">
-          <ul>
-            {data.map((project) => {
-              return (
-                <li key={project._id}>
-                  <span>{project.artist}</span> -{" "}
-                  <span>{project.videoTitle}</span>
+        <ul className="flex w-full flex-row flex-nowrap overflow-x-scroll bg-slate-300 py-64">
+          {data.map((project) => {
+            return (
+              <li key={project._id} className="flex w-full">
+                <div className="flex w-full flex-row flex-nowrap items-center justify-start text-left">
+                  <div className="flex min-w-[500px] flex-col items-center px-12 text-center  font-serif">
+                    <h2 className="text-5xl">{project.artist}</h2>
+                    <h3 className="text-3xl">{project.videoTitle}</h3>
+                  </div>
                   {project.videoPlaceholder && (
-                    <Image
-                      src={project.videoPlaceholder}
-                      width={400}
-                      height={300}
-                      alt="video cover"
-                    />
+                    <div className="block h-full min-w-[500px] flex-1">
+                      <Image
+                        src={project.videoPlaceholder}
+                        width={900}
+                        height={700}
+                        quality={95}
+                        alt={project.videoTitle}
+                        className="h-full w-auto object-cover"
+                      />
+                    </div>
                   )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </section>
     </Layout>
   );
