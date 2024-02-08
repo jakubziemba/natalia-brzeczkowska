@@ -22,6 +22,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "pages/about/index.js",
+    "pages/commercials/index.js",
+    "pages/music-videos/index.js",
+    "pages/photoshoots/index.js"
+  ],
   "exclude": ["node_modules"]
 }
