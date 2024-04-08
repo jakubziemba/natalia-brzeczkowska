@@ -41,6 +41,7 @@ export default function Photoshoots({ data }) {
                     width={1000}
                     height={500}
                     quality={80}
+                    priority={index < 6}
                     alt={session.name || "photosession"}
                     sizes="(min-width: 1024px) 70vw"
                     className="h-auto w-full transition duration-150 ease-in group-hover:scale-[1.02]"

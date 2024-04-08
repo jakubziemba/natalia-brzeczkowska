@@ -21,8 +21,6 @@ export async function getStaticProps() {
 }
 
 export default function Commercials({ data }) {
-  console.log(data);
-
   return (
     <Layout>
       <section className="py-24 2xl:mx-auto 2xl:max-w-screen-2xl">
