@@ -15,13 +15,13 @@ export default function Home() {
   return (
     <Layout>
       <section className="flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <div className="relative flex min-h-[calc(100vh-72px)] w-full flex-col justify-center gap-12 overflow-hidden px-32">
+        <div className="relative flex min-h-[calc(100vh-72px)] w-full flex-col justify-center gap-12 overflow-hidden px-32 2xl:items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.17, 0, 0.55, 1] }}
             level="h1"
-            className="relative z-20 flex flex-row items-center gap-4 text-nowrap text-left font-serif text-8xl leading-[1] tracking-[-0.02em] text-red lg:text-9xl xl:text-[130px]"
+            className="relative top-12 z-20 flex flex-row items-center gap-4 text-nowrap text-left font-serif text-5xl leading-[1] tracking-[-0.02em] text-red lg:text-7xl xl:text-[130px]"
           >
             <StarAnimated className="mb-auto origin-center" />
             <h1>Natalia Brzęczkowska</h1>
@@ -35,17 +35,7 @@ export default function Home() {
                 delay: 1.5,
                 ease: [0.17, 0, 0.55, 1],
               }}
-              className="flex h-full flex-col items-center justify-between"
-            ></motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 1.5,
-                ease: [0.17, 0, 0.55, 1],
-              }}
-              className="row-start-2 font-sans"
+              className="relative top-12 font-sans"
             >
               <span className="flex flex-row gap-4">
                 <StarAnimated />
@@ -71,7 +61,7 @@ export default function Home() {
           </div>
           <motion.div
             // exit={{ scale: 0.5, opacity: 0, transition: { duration: 0.7 } }}
-            className="absolute right-0 top-[40%] z-0 -translate-y-1/2"
+            className="absolute right-0 top-[45%] z-0 -translate-y-1/2"
           >
             <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
           </motion.div>

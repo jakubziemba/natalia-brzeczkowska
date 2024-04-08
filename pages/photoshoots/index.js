@@ -33,7 +33,6 @@ export default function Photoshoots({ data }) {
           className="py-8"
         >
           <Masonry gutter="1rem">
-            {/* <div className="grid grid-cols-2 gap-6 px-32 py-8 md:grid-cols-3 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0"> */}
             {data.map((session) =>
               session.imageAssets.map((imageUrl, index) => (
                 <div key={imageUrl} className="group relative overflow-hidden">
@@ -60,7 +59,6 @@ export default function Photoshoots({ data }) {
                 </div>
               )),
             )}
-            {/* </div> */}
           </Masonry>
         </ResponsiveMasonry>
       </section>
