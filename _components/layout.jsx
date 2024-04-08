@@ -2,7 +2,7 @@ import Nav from "./nav";
 import { motion } from "framer-motion";
 // import LenisScroller from "./LenisScroller";
 
-export default function Layout({ children }) {
+export default function Layout({ children, className = "" }) {
   return (
     <motion.main
       initial={{ opacity: 0 }}
