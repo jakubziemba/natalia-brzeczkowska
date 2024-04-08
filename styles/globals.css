@@ -22,12 +22,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #ffedec;
   font-smooth: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
   font-family: var(--font-sans);
@@ -42,11 +37,41 @@ svg {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-@layer components {
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
   .grid-12-cols {
     @apply grid grid-cols-12 gap-2;
+  }
+
+  .masonry-layout {
+    column-count: 4;
+    column-gap: 1em;
+  }
+
+  @media (max-width: 1024px) {
+    .masonry-layout {
+      column-count: 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .masonry-layout {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .masonry-layout {
+      column-count: 1;
+    }
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+    margin-bottom: 1em;
   }
 }
 

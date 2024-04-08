@@ -16,7 +16,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
   return (
     <motion.svg
       width={width}
-      height={height}
+      height={700}
       viewBox="0 0 500 640"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

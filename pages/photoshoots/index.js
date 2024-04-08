@@ -2,6 +2,8 @@ import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
 import Layout from "../../_components/layout";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export async function getStaticProps() {
   const data = await client.fetch(groq`*[_type == "photosession"]{
@@ -19,31 +21,46 @@ export async function getStaticProps() {
 export default function Photoshoots({ data }) {
   return (
     <Layout>
-      <section className="relative">
+      <section className="relative mt-24 px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
         <div className="mb-4 mt-1 flex justify-center">
           <h1 className="col-span-full col-start-6 font-serif text-6xl">
             Photo Sessions
           </h1>
         </div>
 
-        <div className="mx-auto grid grid-cols-3">
-          {data.map((session, sessionIndex) => {
-            return session.imageAssets.map((imageUrl, index) => (
-              <div
-                key={index}
-                className="h-auto w-full max-w-full p-2 [&:nth-of-type(even)]:p-4 [&:nth-of-type(odd)]:p-8"
-              >
-                <Image
-                  src={imageUrl}
-                  width={1000}
-                  height={500}
-                  index={index}
-                  alt={session.name}
-                />
-              </div>
-            ));
-          })}
-        </div>
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 320: 2, 768: 3 }}
+          className="py-8"
+        >
+          <Masonry gutter="1rem">
+            {data.map((session) =>
+              session.imageAssets.map((imageUrl, index) => (
+                <div key={imageUrl} className="group relative overflow-hidden">
+                  <Image
+                    src={imageUrl}
+                    width={1000}
+                    height={500}
+                    quality={80}
+                    alt={session.name || "photosession"}
+                    sizes="(min-width: 1024px) 70vw"
+                    className="h-auto w-full transition duration-150 ease-in group-hover:scale-[1.02]"
+                  />
+                  <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] hover:flex hover:bg-black/70 hover:opacity-100 hover:backdrop-blur-xl">
+                    <div className="relative p-6">
+                      <p className="scale-95 font-serif text-3xl opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-5xl">
+                        {session.name}
+                      </p>
+                      <p className="scale-95 font-serif text-white/80 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-lg">
+                        {session.photosAuthor}
+                      </p>
+                      <div className="absolute bottom-0 left-0 right-0 -z-0 h-full w-full bg-gradient-to-t from-black/30 to-transparent mix-blend-difference" />
+                    </div>
+                  </div>
+                </div>
+              )),
+            )}
+          </Masonry>
+        </ResponsiveMasonry>
       </section>
     </Layout>
   );
