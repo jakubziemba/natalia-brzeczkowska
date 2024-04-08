@@ -13,7 +13,7 @@ export default function Nav() {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <nav className="sticky top-0 z-20 mx-auto grid w-full grid-cols-[1fr_auto] place-items-center gap-2 bg-transparent px-4 py-6 font-sans font-light [grid-area:nav] xl:px-32 2xl:mx-auto 2xl:max-w-screen-2xl">
+    <nav className="sticky top-0 z-20 mx-auto grid w-full grid-cols-[1fr_auto] place-items-center gap-2 bg-transparent px-4 py-6 font-sans font-light [grid-area:nav] 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
       <Link href="/" className="mr-auto w-max font-normal text-red">
         Natalia Brzęczkowska
       </Link>

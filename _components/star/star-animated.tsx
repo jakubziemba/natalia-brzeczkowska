@@ -20,7 +20,7 @@ export default function StarAnimated({ className }: StarAnimatedProps) {
           delay: 2,
         },
       }}
-      className={`${className || ""} w-min origin-center`}
+      className={`${className || ""} h-max w-min origin-center`}
     >
       <StarIcon />
     </motion.span>
