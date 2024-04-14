@@ -21,13 +21,13 @@ export async function getStaticProps() {
 }
 
 export default function MusicVideos({ data }) {
-  console.log(data);
+  // console.log(data);
 
   return (
     <Layout className="relative">
       <section className="container mx-auto mb-24 py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
         <div className="mb-20 flex justify-center">
-          <h1 className="col-span-full col-start-6 font-serif text-6xl">
+          <h1 className="col-span-full col-start-6 font-serif text-6xl text-red">
             Music Videos
           </h1>
         </div>

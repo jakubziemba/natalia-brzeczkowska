@@ -26,7 +26,7 @@ export default function Home() {
             <StarAnimated className="mb-auto origin-center" />
             <h1>Natalia Brzęczkowska</h1>
           </motion.div>
-          <div className="relative z-20 flex max-w-xs flex-row items-stretch justify-between self-center text-lg font-light text-gray">
+          <div className="relative z-20 flex max-w-xs flex-row items-stretch justify-between self-center text-lg font-light text-red">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

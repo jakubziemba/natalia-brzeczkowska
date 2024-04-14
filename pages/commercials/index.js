@@ -28,7 +28,7 @@ export default function Commercials({ data }) {
           <h1 className="font-serif text-6xl">Commercials</h1>
         </div>
 
-        <div className="flex h-full flex-col gap-x-8 gap-y-24 py-24">
+        <div className="flex h-full flex-col gap-x-8 gap-y-24 px-4 py-24">
           {data.map((project) => {
             const { client, urls, videoPlaceholder } = project;
             const videoIDs = urls.map((url) => {
@@ -40,7 +40,7 @@ export default function Commercials({ data }) {
                 key={project._id}
                 className="grid grid-cols-2 items-center gap-8"
               >
-                <h2 className="font-serif text-4xl">{client}</h2>
+                <h2 className="font-serif text-4xl text-red">{client}</h2>
                 {videoIDs.map((id) => (
                   <LiteYouTubeEmbed
                     key={id}

@@ -23,8 +23,8 @@ export default function Photoshoots({ data }) {
     <Layout>
       <section className="relative mt-24 px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
         <div className="mb-4 mt-1 flex justify-center">
-          <h1 className="col-span-full col-start-6 font-serif text-6xl">
-            Photo Sessions
+          <h1 className="col-span-full col-start-6 font-serif text-6xl text-red">
+            Photos
           </h1>
         </div>
 
