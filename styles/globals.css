@@ -23,7 +23,7 @@
 
 body {
   color: var(--color-red);
-  background: #ffedec;
+  background: var(--color-lightred);
   font-smooth: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
   font-family: var(--font-sans);

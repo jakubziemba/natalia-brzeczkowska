@@ -40,13 +40,13 @@ export default function MusicVideos({ data }) {
                 className={tw(
                   "mx-auto flex w-full max-w-screen-xl gap-8 rounded-lg",
                   odd
-                    ? "flex-row justify-start text-left"
+                    ? "flex-row justify-start text-right"
                     : "flex-row-reverse justify-end",
                 )}
               >
                 <div
                   className={tw(
-                    "flex w-full min-w-80 max-w-md flex-1 flex-col items-center justify-center gap-4 text-balance font-serif text-red",
+                    "flex w-full min-w-80 max-w-md flex-1 flex-col items-center justify-center gap-4 text-balance font-serif text-red ",
                   )}
                 >
                   <h2 className="w-min min-w-64 max-w-md text-4xl font-medium leading-[1.1]">
