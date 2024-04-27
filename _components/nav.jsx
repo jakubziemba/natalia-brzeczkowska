@@ -39,9 +39,9 @@ export default function Nav() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      initial={{ scale: 0.75, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.75, opacity: 0 }}
+                      initial={false}
+                      animate={{ scale: [0.75, 1], opacity: 1 }}
+                      exit={{ scale: [1, 0.75], opacity: 0 }}
                       transition={{
                         type: "spring",
                         bounce: 0.15,
