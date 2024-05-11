@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Layout from "../_components/layout";
 import MaskedShape from "../_components/masked-shape";
-import Heading from "../_components/heading";
 import StarAnimated from "../_components/star/star-animated";
 import { motion } from "framer-motion";
 
@@ -11,57 +10,59 @@ const shapeSize = {
   height: 700,
 };
 
+const ease = [0.17, 0, 0.55, 1];
+
 export default function Home() {
   return (
     <Layout>
       <section className="flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <div className="relative flex min-h-[calc(100vh-72px)] w-full flex-col justify-center gap-12 overflow-hidden px-32 2xl:items-center">
+        <div className="relative flex min-h-[calc(100vh-84px)] w-full flex-col justify-center gap-4 overflow-hidden lg:px-32 2xl:items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: [0.17, 0, 0.55, 1] }}
-            level="h1"
-            className="relative top-12 z-20 flex flex-row items-center gap-4 text-nowrap text-left font-serif text-5xl leading-[1] tracking-[-0.02em] text-red lg:text-7xl xl:text-[130px]"
+            transition={{ duration: 0.8, delay: 0.8, ease }}
+            className="relative -top-10 z-20 mx-auto flex flex-row items-center gap-4"
           >
-            <StarAnimated className="mb-auto origin-center" />
-            <h1>Natalia Brzęczkowska</h1>
+            <StarAnimated className="invisible hidden origin-center md:visible md:block" />
+            <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-5xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 lg:text-7xl xl:text-[130px]">
+              <span>Natalia</span>
+              <span>Brzęczkowska</span>
+            </h1>
           </motion.div>
-          <div className="relative z-20 flex max-w-xs flex-row items-stretch justify-between self-center text-lg font-light text-red">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 1.5,
-                ease: [0.17, 0, 0.55, 1],
-              }}
-              className="relative top-12 font-sans"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 1.5,
+              ease,
+            }}
+            className="invisible relative top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-sans text-lg font-light text-red md:visible md:flex md:flex-col"
+          >
+            <span className="flex flex-row gap-4">
+              <StarAnimated />
+              <p className="mb-8 leading-relaxed">
+                Natalia specializes in makeup for music videos, commercials and
+                photo sessions.
+              </p>
+            </span>
+            <span className="flex flex-row gap-4">
+              <StarAnimated />
+              <p className="mb-8 leading-relaxed">
+                She has worked with a wide variety of artists including Monika
+                Brodka, Karaś/Rogucki, Pezet and Sonar
+              </p>
+            </span>
+            <Link
+              href="/about"
+              className="ml-16 flex w-max rounded-full border border-red bg-red px-10 py-3 text-base text-lightred transition-all hover:bg-lightred hover:text-red"
             >
-              <span className="flex flex-row gap-4">
-                <StarAnimated />
-                <p className="mb-8 leading-relaxed">
-                  Natalia specializes in makeup for music videos, commercials
-                  and photo sessions.
-                </p>
-              </span>
-              <span className="flex flex-row gap-4">
-                <StarAnimated />
-                <p className="mb-8 leading-relaxed">
-                  She has worked with a wide variety of artists including Monika
-                  Brodka, Karaś/Rogucki, Pezet and Sonar
-                </p>
-              </span>
-              <Link
-                href="/about"
-                className="ml-16 flex w-max rounded-full border border-red bg-red px-10 py-3 text-base text-lightred transition-all hover:bg-lightred hover:text-red"
-              >
-                Get to know me better
-              </Link>
-            </motion.div>
-          </div>
+              Get to know me better
+            </Link>
+          </motion.div>
           <motion.div
             // exit={{ scale: 0.5, opacity: 0, transition: { duration: 0.7 } }}
-            className="absolute right-0 top-[45%] z-0 -translate-y-1/2"
+            className="top-[-84px absolute inset-0 z-0 flex flex-col items-center justify-center md:visible lg:left-[45%]"
           >
             <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
           </motion.div>

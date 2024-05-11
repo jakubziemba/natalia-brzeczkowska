@@ -33,6 +33,12 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         delay: 0,
         ease: [0.14, 0.18, 0.21, 0.72],
       }}
+      className="h-auto max-w-md lg:max-w-2xl"
+      style={
+        {
+          // transform: "rotate(-8.2deg)",
+        }
+      }
     >
       <defs>
         <mask id="shape-mask">
@@ -60,6 +66,11 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
                 },
               },
             }}
+            style={
+              {
+                // transform: "rotate(-8.2deg)",
+              }
+            }
           />
         </mask>
 
@@ -73,7 +84,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         />
       </defs>
 
-      <use xlinkHref="#image" mask="url(#shape-mask)" />
+      <use xlinkHref="#image" mask="url(#shape-mask)" className="w-full" />
     </motion.svg>
   );
 }
