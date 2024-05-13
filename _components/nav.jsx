@@ -45,7 +45,7 @@ export default function Nav() {
                       // rotateX: isActive ? 40 : 0,
                     }}
                     transition={{
-                      duration: 0.2,
+                      duration: 0.18,
                     }}
                     className="relative"
                   >
@@ -59,7 +59,7 @@ export default function Nav() {
                       // rotateX: isActive ? 0 : -40,
                     }}
                     transition={{
-                      duration: 0.2,
+                      duration: 0.18,
                     }}
                     className="absolute"
                   >
