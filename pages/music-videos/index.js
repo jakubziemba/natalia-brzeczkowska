@@ -24,7 +24,7 @@ export default function MusicVideos({ data }) {
     <Layout className="relative">
       <section className="container mx-auto pb-16 pt-8 md:py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
         <div className="mb-16 flex justify-center md:mb-20">
-          <h1 className="col-span-full col-start-6 font-serif text-4xl text-red md:text-6xl">
+          <h1 className="font-serif text-4xl text-red md:text-6xl">
             Music Videos
           </h1>
         </div>

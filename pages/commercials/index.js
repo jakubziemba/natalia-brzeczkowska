@@ -25,7 +25,7 @@ export default function Commercials({ data }) {
     <Layout>
       <section className="py-24 2xl:mx-auto 2xl:max-w-screen-2xl">
         <div className="flex justify-center">
-          <h1 className="font-serif text-6xl">Commercials</h1>
+          <h1 className="font-serif text-4xl md:text-6xl">Commercials</h1>
         </div>
 
         <div className="flex h-full flex-col gap-x-8 gap-y-24 px-4 py-24">
@@ -38,7 +38,7 @@ export default function Commercials({ data }) {
             return (
               <div
                 key={project._id}
-                className="grid grid-cols-2 items-center gap-8"
+                className="flex flex-col items-center gap-8 md:flex-row"
               >
                 <h2 className="font-serif text-4xl text-red">{client}</h2>
                 {videoIDs.map((id) => (
