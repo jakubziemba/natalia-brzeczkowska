@@ -1,7 +1,6 @@
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
 import { useState } from "react";
-import Image from "next/image";
 import Layout from "../../_components/layout";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import { tw } from "@/utils/tailwind";
@@ -21,17 +20,15 @@ export async function getStaticProps() {
 }
 
 export default function MusicVideos({ data }) {
-  // console.log(data);
-
   return (
     <Layout className="relative">
-      <section className="container mx-auto py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
-        <div className="mb-20 flex justify-center">
+      <section className="container mx-auto pb-16 pt-8 md:py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
+        <div className="mb-16 flex justify-center md:mb-20">
           <h1 className="col-span-full col-start-6 font-serif text-4xl text-red md:text-6xl">
             Music Videos
           </h1>
         </div>
-        <ul className="container mx-auto flex w-full flex-col gap-16 px-4 md:gap-8 md:px-0">
+        <ul className="mx-auto flex w-full flex-col gap-16 md:gap-8 md:px-0">
           {data.map((project, index) => {
             const odd = index % 2 === 0;
             return (
@@ -46,10 +43,10 @@ export default function MusicVideos({ data }) {
               >
                 <div
                   className={tw(
-                    "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance font-serif text-red md:order-first md:max-w-md md:items-center md:gap-4 ",
+                    "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 font-serif text-red md:order-first md:max-w-md md:items-center md:gap-4 ",
                   )}
                 >
-                  <h2 className="min-w-64 max-w-md text-2xl font-medium leading-[1.1] md:w-min md:text-4xl">
+                  <h2 className="min-w-64 max-w-md text-xl font-medium leading-[1.1] md:w-min md:text-4xl">
                     {project.videoTitle}
                   </h2>
                   <h3 className="font-regular min-w-64 max-w-md text-base leading-snug md:text-lg">
@@ -77,7 +74,7 @@ function VideoSlot({ project, className, children }) {
   return (
     <div
       className={tw(
-        "relative isolate w-full flex-[2] cursor-pointer overflow-hidden rounded-lg",
+        "relative isolate w-full flex-[2] cursor-pointer overflow-hidden",
         className,
       )}
       onClick={() => setShowVideo(true)}

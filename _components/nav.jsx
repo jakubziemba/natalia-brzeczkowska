@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const links = [
   { id: 0, href: "/commercials", label: "Commercials" },
   { id: 1, href: "/music-videos", label: "Music Videos" },
-  { id: 2, href: "/photoshoots", label: "Photoshoots" },
+  { id: 2, href: "/photos", label: "Photos" },
   { id: 3, href: "/about", label: "About" },
   { id: 4, href: "/contact", label: "Contact" },
 ];
@@ -42,7 +42,6 @@ export default function Nav() {
                     animate={{
                       y: isActive ? -15 : 0,
                       z: isActive ? -3 : 0,
-                      // rotateX: isActive ? 40 : 0,
                     }}
                     transition={{
                       duration: 0.18,
@@ -56,7 +55,6 @@ export default function Nav() {
                     animate={{
                       y: isActive ? 0 : 15,
                       z: isActive ? 0 : -3,
-                      // rotateX: isActive ? 0 : -40,
                     }}
                     transition={{
                       duration: 0.18,

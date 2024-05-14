@@ -30,7 +30,7 @@
     "pages/about/index.js",
     "pages/commercials/index.js",
     "pages/music-videos/index.js",
-    "pages/photoshoots/index.js"
+    "pages/photos/index.js"
   ],
   "exclude": ["node_modules"]
 }
