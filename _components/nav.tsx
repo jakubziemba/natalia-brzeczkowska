@@ -12,7 +12,7 @@ const links = [
 ];
 
 export default function Nav() {
-  const [categoryHovered, setCategoryHovered] = useState(false);
+  const [categoryHovered, setCategoryHovered] = useState("");
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (

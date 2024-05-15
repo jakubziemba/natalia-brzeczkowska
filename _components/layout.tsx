@@ -1,7 +1,13 @@
 import Nav from "./nav";
 import { motion } from "framer-motion";
 
-export default function Layout({ children, className = "" }) {
+export default function Layout({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <>
       <Nav />

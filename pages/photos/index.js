@@ -46,7 +46,7 @@ export default function Photoshoots({ data }) {
                     sizes="(min-width: 1024px) 70vw"
                     className="h-auto w-full transition duration-150 ease-in group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] hover:flex hover:bg-black/70 hover:opacity-100 hover:backdrop-blur-xl">
+                  <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] hover:flex hover:bg-gradient-to-t hover:from-black/70 hover:to-transparent hover:opacity-100 hover:backdrop-blur-xl">
                     <div className="relative p-6">
                       <p className="scale-95 font-serif text-3xl opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-5xl">
                         {session.name}
@@ -54,7 +54,9 @@ export default function Photoshoots({ data }) {
                       <p className="scale-95 font-serif text-white/80 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-lg">
                         {session.photosAuthor}
                       </p>
-                      <div className="absolute bottom-0 left-0 right-0 -z-0 h-full w-full bg-gradient-to-t from-black/30 to-transparent mix-blend-difference" />
+                      {session.name && session.photosAuthor ? (
+                        <div className="absolute bottom-0 left-0 right-0 -z-0 h-[150%] w-full bg-gradient-to-t from-black/20 to-transparent mix-blend-difference" />
+                      ) : null}
                     </div>
                   </div>
                 </div>

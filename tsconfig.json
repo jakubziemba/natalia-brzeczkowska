@@ -27,10 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/about/index.js",
-    "pages/commercials/index.js",
-    "pages/music-videos/index.js",
-    "pages/photos/index.js"
+    "pages"
   ],
   "exclude": ["node_modules"]
 }

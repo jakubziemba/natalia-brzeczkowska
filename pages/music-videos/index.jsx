@@ -46,7 +46,7 @@ export default function MusicVideos({ data }) {
                     "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 font-serif text-red md:order-first md:max-w-md md:items-center md:gap-4 ",
                   )}
                 >
-                  <h2 className="min-w-64 max-w-md text-xl font-medium leading-[1.1] md:w-min md:text-4xl">
+                  <h2 className="min-w-64 max-w-md text-2xl font-medium leading-[1.1] md:w-min md:text-4xl">
                     {project.videoTitle}
                   </h2>
                   <h3 className="font-regular min-w-64 max-w-md text-base leading-snug md:text-lg">
@@ -74,7 +74,7 @@ function VideoSlot({ project, className, children }) {
   return (
     <div
       className={tw(
-        "relative isolate w-full flex-[2] cursor-pointer overflow-hidden",
+        "relative isolate aspect-[16/9] flex-[2] cursor-pointer overflow-hidden",
         className,
       )}
       onClick={() => setShowVideo(true)}

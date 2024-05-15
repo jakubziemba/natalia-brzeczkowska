@@ -25,7 +25,7 @@ body {
   color: var(--color-red);
   background: var(--color-lightred);
   font-smooth: antialiased;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
 }
 
