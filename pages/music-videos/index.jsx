@@ -22,7 +22,7 @@ export async function getStaticProps() {
 export default function MusicVideos({ data }) {
   return (
     <Layout className="relative">
-      <section className="container mx-auto pb-16 pt-8 md:py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
+      <section className="mx-auto pb-16 pt-8 md:py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
         <div className="mb-16 flex justify-center md:mb-20">
           <h1 className="font-serif text-4xl text-red md:text-6xl">
             Music Videos
@@ -43,7 +43,7 @@ export default function MusicVideos({ data }) {
               >
                 <div
                   className={tw(
-                    "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 font-serif text-red md:order-first md:max-w-md md:items-center md:gap-4 ",
+                    "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 font-serif text-red md:order-first md:max-w-md md:items-center md:gap-4 lg:min-w-80 ",
                   )}
                 >
                   <h2 className="min-w-64 max-w-md text-2xl font-medium leading-[1.1] md:w-min md:text-4xl">
@@ -54,7 +54,7 @@ export default function MusicVideos({ data }) {
                   </h3>
                 </div>
                 <VideoSlot project={project} />
-                <div className="invisible hidden min-w-80 max-w-md flex-1 md:visible md:block" />
+                <div className="invisible hidden min-w-80 max-w-md flex-1 md:min-w-[auto] lg:visible lg:block lg:min-w-80" />
               </li>
             );
           })}
