@@ -4,21 +4,10 @@
 
 :root {
   --color-red: #c02400;
+  --nav-height: 72px;
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255; */
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
-:root {
-  --nav-height: 72px;
 }
 
 body {
@@ -74,8 +63,4 @@ svg {
     break-inside: avoid;
     margin-bottom: 1em;
   }
-}
-
-main > section {
-  /* margin-top: var(--nav-height); */
 }
