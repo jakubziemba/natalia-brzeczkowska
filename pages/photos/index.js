@@ -48,7 +48,7 @@ export default function Photoshoots({ data }) {
                   />
                   <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] hover:flex hover:bg-gradient-to-t hover:from-black/70 hover:to-transparent hover:opacity-100 hover:backdrop-blur-xl">
                     <div className="relative p-6">
-                      <p className="scale-95 font-serif text-3xl opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-5xl">
+                      <p className="scale-95 font-serif text-2xl opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-5xl">
                         {session.name}
                       </p>
                       <p className="scale-95 font-serif text-white/80 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-lg">
