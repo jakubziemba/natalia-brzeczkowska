@@ -20,7 +20,6 @@ export async function getStaticProps() {
 }
 
 export default function Photoshoots({ data }) {
-  console.log(data);
   return (
     <Layout>
       <section className="relative mt-16 px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
@@ -59,9 +58,10 @@ export default function Photoshoots({ data }) {
                       width={1000}
                       height={500}
                       quality={80}
-                      priority={sessionIndex < 6 ? true : false}
+                      priority={sessionIndex < 2 ? true : false}
+                      loading={sessionIndex < 2 ? "eager" : "lazy"}
                       alt={session.name || "photosession"}
-                      sizes="(min-width: 1024px) 70vw"
+                      sizes="80vw, (min-width: 1024px) 70vw"
                       className="h-auto w-full transition duration-150 ease-in group-hover:scale-[1.02]"
                     />
                     <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] hover:flex hover:bg-gradient-to-t hover:from-black/70 hover:to-transparent hover:opacity-100 hover:backdrop-blur-xl">

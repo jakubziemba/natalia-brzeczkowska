@@ -1,6 +1,7 @@
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Layout from "../../_components/layout";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import { tw } from "@/utils/tailwind";
@@ -32,8 +33,17 @@ export default function MusicVideos({ data }) {
           {data.map((project, index) => {
             const odd = index % 2 === 0;
             return (
-              <li
+              <motion.li
                 key={project._id}
+                initial={{ y: 25, scale: 0.98 }}
+                whileInView={{ y: 0, scale: 1 }}
+                viewport={{ margin: "-60px", once: true }}
+                transition={{
+                  bounce: 0,
+                  stiffness: 500,
+                  damping: 250,
+                  delay: index < 3 ? index * 0.05 : 0.02,
+                }}
                 className={tw(
                   "mx-auto flex w-full max-w-screen-xl gap-4 md:gap-8",
                   odd
@@ -55,7 +65,7 @@ export default function MusicVideos({ data }) {
                 </div>
                 <VideoSlot project={project} />
                 <div className="invisible hidden min-w-80 max-w-md flex-1 md:min-w-[auto] lg:visible lg:block lg:min-w-80" />
-              </li>
+              </motion.li>
             );
           })}
         </ul>

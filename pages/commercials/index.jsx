@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
+import { motion } from "framer-motion";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import Layout from "@/_components/layout";
@@ -29,16 +30,25 @@ export default function Commercials({ data }) {
         </div>
 
         <div className="flex h-full flex-col gap-x-8 gap-y-24 px-4 py-24">
-          {data.map((project) => {
+          {data.map((project, index) => {
             const { client, urls, videoPlaceholder } = project;
             const videoIDs = urls.map((url) => {
               const match = url.match(regex);
               return match ? match[1] : null;
             });
             return (
-              <div
+              <motion.div
                 key={project._id}
-                className="grid gap-8 md:flex md:flex-row md:items-center md:justify-around"
+                initial={{ y: 25, scale: 0.98 }}
+                whileInView={{ y: 0, scale: 1 }}
+                viewport={{ margin: "-60px", once: true }}
+                transition={{
+                  bounce: 0,
+                  stiffness: 500,
+                  damping: 250,
+                  delay: index < 3 ? index * 0.05 : 0.02,
+                }}
+                className="relative grid gap-8 md:flex md:flex-row md:items-center md:justify-around"
               >
                 <h2 className="flex-1 px-4 font-serif text-3xl text-red md:px-0 md:text-4xl">
                   {client}
@@ -54,7 +64,7 @@ export default function Commercials({ data }) {
                   ))}
                 </div>
                 {/* <div>{videoPlaceholder}</div> */}
-              </div>
+              </motion.div>
             );
           })}
         </div>

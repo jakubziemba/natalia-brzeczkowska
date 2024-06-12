@@ -26,11 +26,7 @@ export async function getStaticProps() {
 }
 
 export default function About({ data }) {
-  // console.log(data);
-
   const fields = data.fields[0];
-
-  console.log(fields.description);
 
   return (
     <Layout>
