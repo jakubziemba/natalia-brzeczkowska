@@ -64,7 +64,7 @@ export default function MusicVideos({ data }) {
   );
 }
 
-function VideoSlot({ project, className, children }) {
+function VideoSlot({ project, className }) {
   const [showVideo, setShowVideo] = useState(false);
   const regex =
     /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;

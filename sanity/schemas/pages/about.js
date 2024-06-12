@@ -9,9 +9,15 @@ export default {
       title: "Heading",
     },
     {
-      name: "description",
-      type: "text",
       title: "Description",
+      name: "description",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      title: "Image",
+      name: "image",
+      type: "image",
     },
   ],
 };
