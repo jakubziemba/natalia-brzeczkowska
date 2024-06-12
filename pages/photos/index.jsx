@@ -59,7 +59,7 @@ export default function Photoshoots({ data }) {
                       height={500}
                       quality={80}
                       priority={sessionIndex < 2 ? true : false}
-                      loading={sessionIndex < 2 ? "eager" : "lazy"}
+                      loading="eager"
                       alt={session.name || "photosession"}
                       sizes="80vw, (min-width: 1024px) 70vw"
                       className="h-auto w-full transition duration-150 ease-in group-hover:scale-[1.02]"
