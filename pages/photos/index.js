@@ -50,7 +50,7 @@ export default function Photoshoots({ data }) {
                       bounce: 0,
                       stiffness: 500,
                       damping: 250,
-                      delay: sessionIndex < 8 ? sessionIndex * 0.05 : 0.05,
+                      delay: sessionIndex < 8 ? sessionIndex * 0.05 : 0.03,
                     }}
                     viewport={{ margin: "-60px", once: true }}
                   >
