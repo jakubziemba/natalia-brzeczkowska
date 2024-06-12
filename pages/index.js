@@ -15,16 +15,16 @@ const ease = [0.17, 0, 0.55, 1];
 export default function Home() {
   return (
     <Layout>
-      <section className="flex min-h-[90vh] items-center justify-center overflow-hidden">
-        <div className="relative flex min-h-[calc(100vh-84px)] w-full flex-col justify-center gap-4 overflow-hidden lg:px-32 2xl:items-center">
+      <section className="flex min-h-[calc(100svh-84px)] items-center justify-center overflow-hidden">
+        <div className="relative -top-4 flex min-h-[calc(100svh-84px)] w-full flex-col justify-center gap-4 overflow-hidden lg:px-32 2xl:items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease }}
-            className="relative -top-10 z-20 mx-auto flex flex-row items-center gap-4"
+            className="relative top-0 z-20 mx-auto flex flex-row items-center gap-4 lg:top-14"
           >
             <StarAnimated className="invisible hidden origin-center md:visible md:block" />
-            <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-5xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 lg:text-7xl xl:text-[130px]">
+            <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 lg:text-7xl xl:text-[130px]">
               <span>Natalia</span>
               <span>Brzęczkowska</span>
             </h1>
