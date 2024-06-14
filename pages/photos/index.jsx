@@ -63,7 +63,7 @@ export default function Photoshoots({ data }) {
                       sizes="80vw, (min-width: 1024px) 70vw"
                       className="h-auto w-full transition duration-150 ease-in group-hover:scale-[1.02]"
                     />
-                    <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] hover:flex hover:bg-gradient-to-t hover:from-black/70 hover:to-transparent hover:opacity-100 hover:backdrop-blur-xl">
+                    <div className="absolute inset-0 isolate flex flex-col justify-end bg-clip-text text-white opacity-0 transition duration-[250ms] ease-[0.22,1.0,0.68,1.00] lg:hover:flex lg:hover:bg-gradient-to-t lg:hover:from-black/70 lg:hover:to-transparent lg:hover:opacity-100 lg:hover:backdrop-blur-xl">
                       <div className="relative p-6">
                         <p className="scale-95 font-serif text-2xl opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-100 md:text-5xl">
                           {session.name}

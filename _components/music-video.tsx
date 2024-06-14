@@ -42,7 +42,7 @@ export default function MusicVideo({
         // clipPath: "inset(0% 0% 0% 0%)",
         scale: 1,
       }}
-      viewport={{ margin: "-60px", once: true }}
+      viewport={{ margin: "-80px", once: true }}
       transition={{
         clipPath: { type: "spring", stiffness: 300, damping: 85 },
       }}
