@@ -39,7 +39,7 @@ export default function Photoshoots({ data }) {
                 return (
                   <motion.div
                     key={imageUrl}
-                    className="group relative origin-top overflow-hidden"
+                    className="group relative origin-top overflow-hidden rounded-lg"
                     initial={{ y: 20, scale: 0.95 }}
                     whileInView={{
                       y: 0,

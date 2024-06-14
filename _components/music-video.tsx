@@ -47,12 +47,12 @@ export default function MusicVideo({
         clipPath: { type: "spring", stiffness: 300, damping: 85 },
       }}
       className={tw(
-        "relative mx-auto flex w-full max-w-screen-xl origin-top flex-col gap-4 px-4 ease-in-out md:gap-8",
+        "relative mx-auto flex w-full max-w-screen-xl origin-top flex-col gap-4 px-4 ease-in-out md:gap-8 md:px-10",
       )}
     >
       <motion.div
         className={tw(
-          "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 font-serif text-red md:gap-4 md:px-20 lg:min-w-80 ",
+          "order-1 flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 font-serif text-red md:gap-4 md:px-0 lg:min-w-80 ",
         )}
       >
         <h2 className="min-w-64 text-2xl font-medium leading-[1.1] md:text-5xl">
@@ -83,7 +83,7 @@ function VideoSlot({
   return (
     <div
       className={tw(
-        "relative isolate aspect-[16/9] flex-[2] cursor-pointer overflow-hidden",
+        "relative isolate aspect-[16/9] flex-[2] cursor-pointer overflow-hidden rounded-lg",
         className,
       )}
       onClick={() => setShowVideo(true)}

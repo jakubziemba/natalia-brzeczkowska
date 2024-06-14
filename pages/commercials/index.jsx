@@ -29,7 +29,7 @@ export default function Commercials({ data }) {
           <h1 className="font-serif text-4xl md:text-6xl">Commercials</h1>
         </div>
 
-        <div className="flex h-full flex-col gap-x-8 gap-y-24 px-4 py-24">
+        <div className="flex h-full flex-col gap-x-8 gap-y-24 px-4 py-24 md:px-10">
           {data.map((project, index) => {
             const { client, urls, videoPlaceholder } = project;
             const videoIDs = urls.map((url) => {
@@ -53,7 +53,7 @@ export default function Commercials({ data }) {
                 <h2 className="flex-1 px-4 font-serif text-3xl text-red md:px-0 md:text-4xl">
                   {client}
                 </h2>
-                <div className="flex aspect-[16/9] w-auto flex-1 flex-col gap-4 overflow-hidden">
+                <div className="flex aspect-[16/9] w-auto flex-1 flex-col gap-4 overflow-hidden rounded-lg">
                   {videoIDs.map((id) => (
                     <LiteYouTubeEmbed
                       key={id}
