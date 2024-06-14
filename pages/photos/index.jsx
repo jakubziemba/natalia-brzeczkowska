@@ -40,16 +40,15 @@ export default function Photoshoots({ data }) {
                   <motion.div
                     key={imageUrl}
                     className="group relative origin-top overflow-hidden"
-                    initial={{ y: 20, scale: 0.98 }}
+                    initial={{ y: 20, scale: 0.95 }}
                     whileInView={{
                       y: 0,
                       scale: 1,
                     }}
                     transition={{
                       bounce: 0,
-                      stiffness: 500,
-                      damping: 250,
-                      delay: sessionIndex < 4 ? sessionIndex * 0.05 : 0.02,
+                      stiffness: 300,
+                      damping: 85,
                     }}
                     viewport={{ margin: "-60px", once: true }}
                   >
