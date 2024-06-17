@@ -9,10 +9,9 @@ export default {
       title: "Client",
     },
     {
-      name: "urls",
+      name: "url",
       title: "YouTube video URL",
-      type: "array",
-      of: [{ type: "url", name: "urlM", title: "YouTube video URL" }],
+      type: "string",
     },
     {
       name: "videoPlaceholder",

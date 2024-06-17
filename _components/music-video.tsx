@@ -36,18 +36,20 @@ export default function MusicVideo({
       ref={itemRef}
       initial={{
         // clipPath: "inset(0% 30% 0% 30%)",
-        scale: 0.92,
+        scale: 0.96,
+        y: 20,
       }}
       whileInView={{
         // clipPath: "inset(0% 0% 0% 0%)",
         scale: 1,
+        y: 0,
       }}
       viewport={{ margin: "-80px", once: true }}
       transition={{
         clipPath: { type: "spring", stiffness: 300, damping: 85 },
       }}
       className={tw(
-        "relative mx-auto flex w-full max-w-screen-xl origin-top flex-col gap-4 px-4 ease-in-out md:gap-8 md:px-10",
+        "relative mx-auto flex w-full max-w-screen-lg flex-col gap-4 px-4 ease-in-out md:gap-8 md:px-10",
       )}
     >
       <motion.div

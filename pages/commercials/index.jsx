@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import Layout from "@/_components/layout";
+import VideoSlot from "@/_components/video-slot";
 
 const regex =
   /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -26,44 +27,37 @@ export default function Commercials({ data }) {
     <Layout>
       <section className="pb-16 pt-8 2xl:mx-auto 2xl:max-w-screen-2xl">
         <div className="flex justify-center">
-          <h1 className="font-serif text-4xl md:text-6xl">Commercials</h1>
+          <motion.h1 className="font-serif text-4xl md:text-6xl">
+            Commercials
+          </motion.h1>
         </div>
 
-        <div className="flex h-full flex-col gap-x-8 gap-y-24 px-4 py-24 md:px-10">
+        <div className="grid auto-rows-auto gap-x-8 gap-y-24 px-4 py-24 md:grid-cols-2 md:px-10">
           {data.map((project, index) => {
             const { client, urls, videoPlaceholder } = project;
-            const videoIDs = urls.map((url) => {
+            {
+              /* const videoIDs = urls.map((url) => {
               const match = url.match(regex);
               return match ? match[1] : null;
-            });
+            }); */
+            }
             return (
               <motion.div
                 key={project._id}
-                initial={{ y: 25, scale: 0.98 }}
+                initial={{ y: 25, scale: 0.96 }}
                 whileInView={{ y: 0, scale: 1 }}
                 viewport={{ margin: "-60px", once: true }}
                 transition={{
                   bounce: 0,
                   stiffness: 500,
                   damping: 250,
-                  delay: index < 3 ? index * 0.05 : 0.02,
                 }}
-                className="relative grid gap-8 md:flex md:flex-row md:items-center md:justify-around"
+                className="relative"
               >
-                <h2 className="flex-1 px-4 font-serif text-3xl text-red md:px-0 md:text-4xl">
+                <VideoSlot project={project} className="shadow-lg" />
+                <h2 className="flex-1 pt-6 font-serif text-3xl text-red md:pt-8 md:text-4xl">
                   {client}
                 </h2>
-                <div className="flex aspect-[16/9] w-auto flex-1 flex-col gap-4 overflow-hidden rounded-lg">
-                  {videoIDs.map((id) => (
-                    <LiteYouTubeEmbed
-                      key={id}
-                      id={id}
-                      title={client}
-                      className="h-full min-h-[400px] w-full min-w-full"
-                    />
-                  ))}
-                </div>
-                {/* <div>{videoPlaceholder}</div> */}
               </motion.div>
             );
           })}
