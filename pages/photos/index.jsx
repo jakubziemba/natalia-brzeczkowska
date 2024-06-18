@@ -3,10 +3,10 @@ import { groq } from "next-sanity";
 import { useState } from "react";
 import Layout from "../../_components/layout";
 import Image from "next/image";
-import { AnimatePresence, motion, inView } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { tw } from "@/utils/tailwind";
-import { useMediaQuery, useWindowSize } from "usehooks-ts";
+import { useMediaQuery } from "usehooks-ts";
 
 export async function getStaticProps() {
   const data =
@@ -52,16 +52,14 @@ export default function Photoshoots({ data }) {
                 return (
                   <motion.div
                     key={imageUrl}
-                    initial={{ y: 20, scale: 0.95 }}
+                    initial={{ y: 20 }}
                     whileInView={{
                       y: 0,
-                      scale: 1,
                     }}
                     transition={{
                       type: "spring",
                       bounce: 0,
-                      stiffness: 300,
-                      damping: 35,
+                      duration: 0.8,
                     }}
                     viewport={{ margin: "-15% ", once: true }}
                     onTap={() => {
@@ -98,19 +96,31 @@ export default function Photoshoots({ data }) {
                     onMouseLeave={() =>
                       setShowDetails({ sessionId: null, imageIndex: null })
                     }
-                    className="group relative isolate origin-top cursor-pointer select-none overflow-hidden rounded-lg"
+                    className="group relative isolate origin-top cursor-pointer select-none overflow-hidden "
                   >
-                    <Image
-                      src={imageUrl}
-                      width={1000}
-                      height={500}
-                      quality={80}
-                      priority
-                      loading="eager"
-                      alt={session.name || "photosession"}
-                      sizes="80vw, (min-width: 1024px) 70vw"
-                      className="h-auto w-full"
-                    />
+                    <motion.div
+                      initial={{ scale: 1.1 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{
+                        type: "spring",
+                        bounce: 0,
+                        duration: 1,
+                      }}
+                      viewport={{ margin: "-15% ", once: true }}
+                      className="place-items-centerh-full grid w-auto"
+                    >
+                      <Image
+                        src={imageUrl}
+                        width={1000}
+                        height={500}
+                        quality={80}
+                        priority
+                        loading="eager"
+                        alt={session.name || "photosession"}
+                        sizes="80vw, (min-width: 1024px) 70vw"
+                        className="origin-top"
+                      />
+                    </motion.div>
                     <AnimatePresence>
                       <motion.div
                         initial={{
@@ -125,10 +135,10 @@ export default function Photoshoots({ data }) {
                           duration: 0.18,
                         }}
                         className={tw(
-                          "absolute inset-0 isolate z-20 flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent bg-clip-text text-white",
+                          "absolute inset-0 isolate flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent bg-clip-text text-white backdrop-blur-lg",
                         )}
                       >
-                        <div className="pointer-events-none relative z-20 p-6">
+                        <div className="pointer-events-none relative p-6">
                           <p className="font-serif text-2xl md:text-5xl">
                             {session.name}
                           </p>

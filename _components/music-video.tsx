@@ -15,7 +15,7 @@ export default function MusicVideo({
   index,
 }: {
   project: any;
-  index: number;
+  index?: number;
 }) {
   const itemRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -35,21 +35,19 @@ export default function MusicVideo({
       key={project._id}
       ref={itemRef}
       initial={{
-        // clipPath: "inset(0% 30% 0% 30%)",
-        scale: 0.96,
-        y: 20,
+        y: 30,
       }}
       whileInView={{
-        // clipPath: "inset(0% 0% 0% 0%)",
-        scale: 1,
         y: 0,
       }}
       viewport={{ margin: "-80px", once: true }}
       transition={{
-        clipPath: { type: "spring", stiffness: 300, damping: 85 },
+        type: "spring",
+        bounce: 0,
+        duration: 0.8,
       }}
       className={tw(
-        "relative mx-auto flex w-full max-w-screen-lg flex-col gap-4 px-4 ease-in-out md:gap-8 md:px-10",
+        "relative isolate mx-auto flex w-full max-w-screen-lg flex-col gap-4 overflow-hidden px-4 ease-in-out md:gap-8 md:px-10",
       )}
     >
       <motion.div
@@ -64,7 +62,18 @@ export default function MusicVideo({
           {project.artist}
         </h3>
       </motion.div>
-      <VideoSlot project={project} className="shadow-lg" />
+      <motion.div
+        transition={{
+          type: "spring",
+          bounce: 0,
+          duration: 1,
+        }}
+        viewport={{ margin: "-15% ", once: true }}
+        className="relative isolate max-w-screen-lg overflow-hidden"
+        style={{ borderRadius: "8px" }}
+      >
+        <VideoSlot project={project} className="shadow-lg" />
+      </motion.div>
     </motion.li>
   );
 }
@@ -83,14 +92,26 @@ function VideoSlot({
   const videoId = match ? match[1] : null;
 
   return (
-    <div
+    <motion.div
+      initial={{ scale: 1.15 }}
+      whileInView={{ scale: 1 }}
+      transition={{
+        type: "spring",
+        bounce: 0,
+        duration: 1,
+      }}
+      viewport={{ margin: "-15% ", once: true }}
       className={tw(
-        "relative isolate aspect-[16/9] flex-[2] cursor-pointer overflow-hidden rounded-lg",
+        "aspect-[16/9] flex-[2] cursor-pointer overflow-hidden",
         className,
       )}
       onClick={() => setShowVideo(true)}
     >
-      <LiteYouTubeEmbed id={videoId} title={project.title} />
-    </div>
+      <LiteYouTubeEmbed
+        id={videoId}
+        title={project.title}
+        iframeClass="absolute inset-0 overflow-hidden"
+      />
+    </motion.div>
   );
 }

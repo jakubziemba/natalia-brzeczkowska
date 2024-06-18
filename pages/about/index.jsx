@@ -53,7 +53,7 @@ export default function About({ data }) {
             priority
             loading="eager"
             alt="Natalia Brzęczkowska"
-            className="h-full w-auto flex-1 rounded-lg"
+            className="h-full w-auto flex-1"
           />
           <div className="flex flex-1 flex-col gap-4">
             <div className="font-regular space-y-4 text-pretty font-sans text-xl leading-8">

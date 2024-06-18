@@ -1,7 +1,12 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 
 const links = [
   { id: 0, href: "/commercials", label: "Commercials" },
@@ -14,7 +19,21 @@ const links = [
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
   const [categoryHovered, setCategoryHovered] = useState("");
+
+  const [isHidden, setIsHidden] = useState(false);
+  const { scrollY } = useScroll();
+  const lastYRef = useRef(0);
+
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const difference = y - lastYRef.current;
+    if (Math.abs(difference) > 50) {
+      setIsHidden(difference > 0);
+
+      lastYRef.current = y;
+    }
+  });
 
   useEffect(() => {
     if (showMenu) {
@@ -25,34 +44,51 @@ export default function Nav() {
   }, [showMenu]);
 
   return (
-    <nav className="relative top-0 mx-auto flex w-full flex-row items-center justify-between gap-2 bg-transparent px-4 py-6 font-sans font-light 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
-      <Link href="/" className="flex w-max font-normal text-red">
-        Natalia Brzęczkowska
+    <motion.nav
+      animate={isHidden ? "hidden" : "visible"}
+      whileHover="visible"
+      onFocusCapture={() => setIsHidden(false)}
+      variants={{
+        hidden: {
+          y: "-88%",
+        },
+        visible: {
+          y: "0%",
+        },
+      }}
+      transition={{ duration: 0.2 }}
+      className="sticky top-2 z-10 mx-auto mt-2 flex w-full max-w-6xl flex-row items-center justify-between gap-2 rounded-full py-4 pl-6 pr-3 font-sans font-light shadow-md shadow-red/5 backdrop-blur-xl 2xl:mx-auto"
+    >
+      <Link
+        href="/"
+        className="flex w-max font-serif text-xl font-normal text-red"
+      >
+        Natimakeupik
       </Link>
       {isMobile ? (
         <button
-          className="px-3 py-1.5 text-red md:invisible md:hidden"
+          className="px-3 py-1.5 text-white md:invisible md:hidden"
           onClick={() => setShowMenu(!showMenu)}
         >
           Menu
         </button>
       ) : null}
-      <ul className="invisible hidden text-sm md:visible md:flex">
+      <ul className="invisible hidden text-base font-normal leading-none text-red md:visible md:flex">
         {links.map((link, index) => {
           const isActive = categoryHovered === link.label;
           return (
-            <li key={index} className="leading-none">
+            <li key={index}>
               <Link
                 href={link.href}
                 className="flex w-full flex-col overflow-hidden px-3 py-2"
                 onMouseEnter={() => setCategoryHovered(link.label)}
                 onMouseLeave={() => setCategoryHovered("")}
               >
-                <span className="relative flex origin-center overflow-hidden p-px [perspective:45px]">
+                <span className="relative flex origin-center overflow-hidden p-0.5 [perspective:45px]">
                   <motion.span
                     initial={{ y: 0 }}
                     animate={{
-                      y: isActive ? -15 : 0,
+                      y: isActive ? -18 : 0,
                       z: isActive ? -3 : 0,
                     }}
                     transition={{
@@ -63,9 +99,9 @@ export default function Nav() {
                     {link.label}
                   </motion.span>
                   <motion.span
-                    initial={{ y: 15 }}
+                    initial={{ y: 18 }}
                     animate={{
-                      y: isActive ? 0 : 15,
+                      y: isActive ? 0 : 18,
                       z: isActive ? 0 : -3,
                     }}
                     transition={{
@@ -105,7 +141,7 @@ export default function Nav() {
                   <li key={index} className="text-red">
                     <Link
                       href={link.href}
-                      className="flex w-full flex-col overflow-hidden px-3 py-2 font-serif text-4xl font-[400]"
+                      className="flex w-full flex-col overflow-hidden px-3 py-2 font-serif text-4xl font-medium"
                       onClick={() => setShowMenu(!showMenu)}
                     >
                       {link.label}
@@ -117,6 +153,6 @@ export default function Nav() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }
