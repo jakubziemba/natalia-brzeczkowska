@@ -32,29 +32,35 @@ export default function Commercials({ data }) {
           </motion.h1>
         </div>
 
-        <div className="grid auto-rows-auto gap-x-8 gap-y-24 px-4 py-24 md:grid-cols-2 md:px-10">
-          {data.map((project, index) => {
-            const { client, urls, videoPlaceholder } = project;
-            {
-              /* const videoIDs = urls.map((url) => {
-              const match = url.match(regex);
-              return match ? match[1] : null;
-            }); */
-            }
+        <div className="mx-auto flex max-w-5xl flex-col gap-x-8 gap-y-24 px-4 py-24 md:px-10">
+          {data.map((project) => {
+            const { client, videoPlaceholder } = project;
             return (
               <motion.div
                 key={project._id}
-                initial={{ y: 25, scale: 0.96 }}
-                whileInView={{ y: 0, scale: 1 }}
-                viewport={{ margin: "-60px", once: true }}
+                initial={{ y: 30 }}
+                whileInView={{ y: 0 }}
+                viewport={{ margin: "-15%", once: true }}
                 transition={{
+                  type: "spring",
                   bounce: 0,
-                  stiffness: 500,
-                  damping: 250,
+                  duration: 0.8,
                 }}
-                className="relative"
+                className="max-w-screen-lg overflow-hidden"
               >
-                <VideoSlot project={project} className="shadow-lg" />
+                <motion.div
+                  initial={{ scale: 1.15 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{
+                    type: "spring",
+                    bounce: 0,
+                    duration: 1,
+                  }}
+                  viewport={{ margin: "-15% ", once: true }}
+                  className="overflow-hidden shadow-lg shadow-red/5"
+                >
+                  <VideoSlot project={project} />
+                </motion.div>
                 <h2 className="flex-1 pt-6 font-serif text-3xl text-red md:pt-8 md:text-4xl">
                   {client}
                 </h2>

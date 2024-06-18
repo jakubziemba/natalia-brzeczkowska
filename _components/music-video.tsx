@@ -1,14 +1,7 @@
 import { tw } from "@/utils/tailwind";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { YouTubeEmbed } from "@next/third-parties/google";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 export default function MusicVideo({
   project,
@@ -17,23 +10,9 @@ export default function MusicVideo({
   project: any;
   index?: number;
 }) {
-  const itemRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: itemRef,
-    offset: ["start 90%", "end end"],
-  });
-  const isInView = useInView(itemRef);
-
-  const clipPath = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["inset(0% 50% 0% 50%)", "inset(0% 0% 0% 0%)"],
-  );
-
   return (
     <motion.li
       key={project._id}
-      ref={itemRef}
       initial={{
         y: 30,
       }}
@@ -70,7 +49,6 @@ export default function MusicVideo({
         }}
         viewport={{ margin: "-15% ", once: true }}
         className="relative isolate max-w-screen-lg overflow-hidden"
-        style={{ borderRadius: "8px" }}
       >
         <VideoSlot project={project} className="shadow-lg" />
       </motion.div>
@@ -107,11 +85,7 @@ function VideoSlot({
       )}
       onClick={() => setShowVideo(true)}
     >
-      <LiteYouTubeEmbed
-        id={videoId}
-        title={project.title}
-        iframeClass="absolute inset-0 overflow-hidden"
-      />
+      <YouTubeEmbed videoid={videoId} style="max-width: 100%" />
     </motion.div>
   );
 }

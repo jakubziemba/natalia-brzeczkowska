@@ -1,5 +1,5 @@
 import { tw } from "@/utils/tailwind";
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 export default function VideoSlot({
   className,
@@ -20,7 +20,7 @@ export default function VideoSlot({
         className,
       )}
     >
-      <LiteYouTubeEmbed id={videoId} title={project?.title} />
+      <YouTubeEmbed videoid={videoId} style="max-width: 100%" />
     </div>
   );
 }

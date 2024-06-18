@@ -59,10 +59,7 @@ export default function Nav() {
       transition={{ duration: 0.2 }}
       className="sticky top-2 z-10 mx-auto mt-2 flex w-full max-w-6xl flex-row items-center justify-between gap-2 rounded-full py-4 pl-6 pr-3 font-sans font-light shadow-md shadow-red/5 backdrop-blur-xl 2xl:mx-auto"
     >
-      <Link
-        href="/"
-        className="flex w-max font-serif text-xl font-normal text-red"
-      >
+      <Link href="/" className="flex w-max font-sans font-medium text-red">
         Natimakeupik
       </Link>
       {isMobile ? (
