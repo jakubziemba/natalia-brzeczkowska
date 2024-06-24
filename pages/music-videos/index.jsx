@@ -1,7 +1,7 @@
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
-import { motion } from "framer-motion";
 import Layout from "../../_components/layout";
+import PageHeading from "@/_components/page-heading";
 import MusicVideo from "@/_components/music-video";
 
 export async function getStaticProps() {
@@ -18,16 +18,10 @@ export async function getStaticProps() {
 }
 
 export default function MusicVideos({ data }) {
-  // const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
   return (
     <Layout className="relative">
-      <section className="mx-auto pb-16 pt-8 md:py-16 2xl:mx-auto 2xl:max-w-screen-2xl">
-        <div className="mb-16 flex justify-center md:mb-20">
-          <motion.h1 className="font-serif text-4xl text-red md:text-6xl">
-            Music Videos
-          </motion.h1>
-        </div>
+      <section className="mx-auto 2xl:mx-auto 2xl:max-w-screen-2xl">
+        <PageHeading>Music Videos</PageHeading>
         <ul className="relative mx-auto flex w-full flex-col gap-16 [perspective:800px] [transform-style:preserve-3d] md:gap-32 md:px-0">
           {data.map((project, index) => {
             return (

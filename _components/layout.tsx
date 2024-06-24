@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 export default function Layout({
   children,
   className = "",
+  style = {},
 }: {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
-    <>
+    <motion.div className="bg-lightred" style={style}>
       <Nav />
       <motion.main
         initial={{ opacity: 0 }}
@@ -18,6 +20,6 @@ export default function Layout({
       >
         {children}
       </motion.main>
-    </>
+    </motion.div>
   );
 }

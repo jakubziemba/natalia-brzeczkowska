@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@cyriacbr/react-split-text':
+        specifier: ^1.0.0
+        version: 1.0.0(react@18.2.0)
       '@million/lint':
         specifier: 1.0.0-rc.1
         version: 1.0.0-rc.1(rollup@3.29.4)
@@ -65,6 +68,9 @@ importers:
       react-lite-youtube-embed:
         specifier: ^2.4.0
         version: 2.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-masonry-css:
+        specifier: ^1.0.16
+        version: 1.0.16(react@18.2.0)
       react-responsive-masonry:
         specifier: ^2.2.0
         version: 2.2.0
@@ -877,6 +883,12 @@ packages:
 
   '@codemirror/view@6.26.1':
     resolution: {integrity: sha512-wLw0t3R9AwOSQThdZ5Onw8QQtem5asE7+bPlnzc57eubPqiuJKIzwjMZ+C42vQett+iva+J8VgFV4RYWDBh5FA==}
+
+  '@cyriacbr/react-split-text@1.0.0':
+    resolution: {integrity: sha512-WkD88+LjOx1vWVI0hh6flUtnplGnxL7zE1SYFbEFfG0gvAJ3SERwtBqtQV8NoOKNd2dZr/GrfK0sBh460IvtHQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
 
   '@dnd-kit/accessibility@3.1.0':
     resolution: {integrity: sha512-ea7IkhKvlJUv9iSHJOnxinBcoOI3ppGnnL+VDJ75O45Nss6HtZd8IdN8touXPDtASfeI2T2LImb8VOZcL47wjQ==}
@@ -4172,6 +4184,11 @@ packages:
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
 
+  react-masonry-css@1.0.16:
+    resolution: {integrity: sha512-KSW0hR2VQmltt/qAa3eXOctQDyOu7+ZBevtKgpNDSzT7k5LA/0XntNa9z9HKCdz3QlxmJHglTZ18e4sX4V8zZQ==}
+    peerDependencies:
+      react: '>=16.0.0'
+
   react-reconciler@0.29.2:
     resolution: {integrity: sha512-zZQqIiYgDCTP/f1N/mAR10nJGrPD2ZR+jDSEsKWJHYC7Cm2wodlwbR3upZRdC3cjIjSlTLNVyO7Iu0Yy7t2AYg==}
     engines: {node: '>=0.10.0'}
@@ -6099,6 +6116,10 @@ snapshots:
       '@codemirror/state': 6.4.1
       style-mod: 4.1.2
       w3c-keyname: 2.2.8
+
+  '@cyriacbr/react-split-text@1.0.0(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
 
   '@dnd-kit/accessibility@3.1.0(react@18.2.0)':
     dependencies:
@@ -9640,6 +9661,10 @@ snapshots:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+
+  react-masonry-css@1.0.16(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   react-reconciler@0.29.2(react@18.2.0):
     dependencies:

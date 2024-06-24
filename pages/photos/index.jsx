@@ -1,9 +1,10 @@
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Layout from "../../_components/layout";
 import ImageGallery from "@/_components/image-gallery";
-import { motion } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
+import PageHeading from "@/_components/page-heading";
 
 export async function getStaticProps() {
   const data =
@@ -20,26 +21,36 @@ export async function getStaticProps() {
   };
 }
 
-export default function Photoshoots({ data }) {
+export default function Photos({ data }) {
   const [showDetails, setShowDetails] = useState({
     sessionId: null,
     imageIndex: null,
   });
+  // const sectionRef = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: sectionRef,
+  // });
+  // const background = useTransform(
+  //   scrollYProgress,
+  //   [0, 1],
+  //   ["#FFEDEC", "#F7F1FF"],
+  // );
 
   return (
-    <Layout>
-      <section className="relative mt-16 px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
-        <div className="mb-4 mt-1 flex justify-center">
-          <motion.h1 className="col-span-full col-start-6 font-serif text-6xl text-red">
-            Photos
-          </motion.h1>
-        </div>
+    <Layout
+    //  style={{ backgroundColor: background }}
+    >
+      <motion.section
+        // ref={sectionRef}
+        className="relative px-4 pb-24 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0"
+      >
+        <PageHeading>Photos</PageHeading>
         <ImageGallery
           data={data}
           showDetails={showDetails}
           setShowDetails={setShowDetails}
         />
-      </section>
+      </motion.section>
     </Layout>
   );
 }

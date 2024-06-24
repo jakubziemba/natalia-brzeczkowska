@@ -57,20 +57,20 @@ export default function Nav() {
         },
       }}
       transition={{ duration: 0.2 }}
-      className="sticky top-2 z-10 mx-auto mt-2 flex w-full max-w-6xl flex-row items-center justify-between gap-2 rounded-full py-4 pl-6 pr-3 font-sans font-light shadow-md shadow-red/5 backdrop-blur-xl 2xl:mx-auto"
+      className="sticky top-0 z-20 mx-auto flex w-full flex-row items-center justify-between gap-2 border-b border-red/5 bg-lightred py-4 pl-6 pr-3 font-sans font-light 2xl:mx-auto"
     >
       <Link href="/" className="flex w-max font-sans font-medium text-red">
         Natimakeupik
       </Link>
       {isMobile ? (
         <button
-          className="px-3 py-1.5 text-white md:invisible md:hidden"
+          className="px-3 py-1.5 text-red md:invisible md:hidden"
           onClick={() => setShowMenu(!showMenu)}
         >
           Menu
         </button>
       ) : null}
-      <ul className="invisible hidden text-base font-normal leading-none text-red md:visible md:flex">
+      <ul className="invisible relative z-20 hidden text-base font-normal leading-none text-red md:visible md:flex">
         {links.map((link, index) => {
           const isActive = categoryHovered === link.label;
           return (
@@ -83,10 +83,11 @@ export default function Nav() {
               >
                 <span className="relative flex origin-center overflow-hidden p-0.5 [perspective:45px]">
                   <motion.span
-                    initial={{ y: 0 }}
+                    initial={{ transform: "translate3d(0px, 0px, 0px)" }}
                     animate={{
-                      y: isActive ? -18 : 0,
-                      z: isActive ? -3 : 0,
+                      transform: isActive
+                        ? "translate3d(0px, -18px, -3px)"
+                        : "translate3d(0px, 0px, 0px)",
                     }}
                     transition={{
                       duration: 0.18,
@@ -96,10 +97,11 @@ export default function Nav() {
                     {link.label}
                   </motion.span>
                   <motion.span
-                    initial={{ y: 18 }}
+                    initial={{ transform: "translate3d(0px, 18px, -3px)" }}
                     animate={{
-                      y: isActive ? 0 : 18,
-                      z: isActive ? 0 : -3,
+                      transform: isActive
+                        ? "translate3d(0px, 0px, 0px)"
+                        : "translate3d(0px, 18px, -3px)",
                     }}
                     transition={{
                       duration: 0.18,
@@ -123,8 +125,9 @@ export default function Nav() {
             transition={{
               type: "spring",
               bounce: 0,
+              duration: 0.7,
             }}
-            className="absolute inset-0 z-30 flex h-screen w-full flex-row justify-center gap-2 bg-transparent px-4 py-6 backdrop-blur-3xl"
+            className="absolute inset-0 z-50 flex h-screen w-full flex-row justify-center gap-2 bg-lightred px-4 py-6"
           >
             <button
               className="absolute right-4 top-6 z-30 size-12 px-3 py-1.5 text-lg text-red md:invisible md:hidden"
@@ -132,7 +135,7 @@ export default function Nav() {
             >
               X
             </button>
-            <ul className="flex flex-col items-center justify-center gap-2 text-xl">
+            <ul className="flex flex-col items-center justify-center gap-2 bg-lightred text-xl">
               {links.map((link, index) => {
                 return (
                   <li key={index} className="text-red">

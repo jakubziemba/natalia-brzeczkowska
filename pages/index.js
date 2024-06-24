@@ -21,7 +21,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease }}
-            className="relative top-0 z-20 mx-auto flex flex-row items-center gap-4 lg:top-14"
+            className="relative top-0 z-10 mx-auto flex flex-row items-center gap-4 lg:top-14"
           >
             <StarAnimated className="invisible hidden origin-center md:visible md:block" />
             <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 lg:text-7xl xl:text-[130px]">
@@ -60,10 +60,7 @@ export default function Home() {
               Get to know me better
             </Link>
           </motion.div>
-          <motion.div
-            // exit={{ scale: 0.5, opacity: 0, transition: { duration: 0.7 } }}
-            className="top-[-84px absolute inset-0 z-0 flex flex-col items-center justify-center md:visible lg:left-[45%]"
-          >
+          <motion.div className="top-[-84px absolute inset-0 z-0 flex flex-col items-center justify-center md:visible lg:left-[45%]">
             <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
           </motion.div>
         </div>

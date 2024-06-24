@@ -20,7 +20,7 @@ export default function VideoSlot({
         className,
       )}
     >
-      <YouTubeEmbed videoid={videoId} style="max-width: 100%" />
+      <YouTubeEmbed videoid={videoId} style="max-width: 100%;" />
     </div>
   );
 }
