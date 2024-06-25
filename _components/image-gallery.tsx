@@ -44,7 +44,7 @@ export default function ImageGallery({
                   });
                 }
               }}
-              className="group relative isolate origin-top cursor-pointer select-none overflow-hidden"
+              className="group relative isolate origin-top cursor-pointer select-none overflow-hidden rounded-[28px]"
             >
               <motion.div
                 initial={{

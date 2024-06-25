@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { tw } from "@/utils/tailwind";
 import { YouTubeEmbed } from "@next/third-parties/google";
 
@@ -14,13 +15,28 @@ export default function VideoSlot({
   const videoId = match ? match[1] : null;
 
   return (
-    <div
+    <motion.div
+      initial={{
+        transform: "scale(1.1)",
+      }}
+      whileInView={{
+        transform: "scale(1)",
+      }}
+      transition={{
+        type: "spring",
+        bounce: 0,
+        duration: 0.8,
+      }}
+      viewport={{ margin: "-15% ", once: true }}
       className={tw(
-        "relative inset-0 h-auto w-full flex-[2] cursor-pointer overflow-hidden",
+        "relative inset-0 isolate h-auto w-full flex-[2] origin-top cursor-pointer overflow-hidden rounded-[40px]",
         className,
       )}
     >
-      <YouTubeEmbed videoid={videoId} style="max-width: 100%;" />
-    </div>
+      <YouTubeEmbed
+        videoid={videoId}
+        style="max-width: 100%; border-radius: 40px"
+      />
+    </motion.div>
   );
 }

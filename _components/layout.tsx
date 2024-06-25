@@ -11,7 +11,7 @@ export default function Layout({
   style?: React.CSSProperties;
 }) {
   return (
-    <motion.div className="bg-lightred" style={style}>
+    <motion.div style={style}>
       <Nav />
       <motion.main
         initial={{ opacity: 0 }}
