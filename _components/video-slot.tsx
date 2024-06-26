@@ -17,10 +17,10 @@ export default function VideoSlot({
   return (
     <motion.div
       initial={{
-        transform: "scale(1.1)",
+        scale: 1.1,
       }}
       whileInView={{
-        transform: "scale(1)",
+        scale: 1,
       }}
       transition={{
         type: "spring",
@@ -29,13 +29,13 @@ export default function VideoSlot({
       }}
       viewport={{ margin: "-15% ", once: true }}
       className={tw(
-        "relative inset-0 isolate h-auto w-full flex-[2] origin-top cursor-pointer overflow-hidden rounded-[40px]",
+        "h-auto w-full flex-[2] origin-top cursor-pointer overflow-hidden rounded-[36px]",
         className,
       )}
     >
       <YouTubeEmbed
         videoid={videoId}
-        style="max-width: 100%; border-radius: 40px"
+        style="max-width: 100%; border-radius: 36px"
       />
     </motion.div>
   );

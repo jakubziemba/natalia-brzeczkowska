@@ -35,11 +35,11 @@ export default function MusicVideos({ data }) {
                 transition={{
                   type: "tween",
                   ease: "easeInOut",
-                  duration: 0.3,
+                  duration: 0.25,
                 }}
                 className="w-full max-w-screen-lg overflow-hidden"
               >
-                <div className="min-h-[190px] overflow-hidden rounded-[40px] shadow-red/5 lg:min-h-[400px]">
+                <div className="min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
                   <VideoSlot project={project} />
                 </div>
                 <motion.div
@@ -49,7 +49,7 @@ export default function MusicVideos({ data }) {
                   transition={{
                     type: "tween",
                     ease: "easeInOut",
-                    duration: 0.3,
+                    duration: 0.25,
                   }}
                   className="flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 pt-6 font-serif font-[450] text-red md:gap-4 md:px-0 lg:min-w-80 "
                 >

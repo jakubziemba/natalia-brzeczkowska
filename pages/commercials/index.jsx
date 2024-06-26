@@ -38,11 +38,11 @@ export default function Commercials({ data }) {
                 transition={{
                   type: "tween",
                   ease: "easeInOut",
-                  duration: 0.3,
+                  duration: 0.25,
                 }}
                 className="w-full max-w-screen-lg overflow-hidden"
               >
-                <div className="min-h-[190px] overflow-hidden rounded-[40px] shadow-red/5 lg:min-h-[400px]">
+                <div className="relative isolate min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
                   <VideoSlot project={project} />
                 </div>
                 <div>
@@ -53,7 +53,7 @@ export default function Commercials({ data }) {
                     transition={{
                       type: "tween",
                       ease: "easeInOut",
-                      duration: 0.3,
+                      duration: 0.25,
                     }}
                     className="relative flex-1 pt-6 font-serif text-3xl font-[450] text-red md:pt-8 md:text-4xl"
                   >

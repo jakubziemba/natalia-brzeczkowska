@@ -18,6 +18,7 @@ body {
     radial-gradient(at 75% 60%, hsla(331, 42%, 90%, 1) 50px, transparent 40%),
     radial-gradient(at 9% 34%, hsla(300, 32%, 88%, 1) 100px, transparent 70%),
     radial-gradient(at 38% 28%, hsla(229, 80%, 90%, 1) 0px, transparent 30%);
+  background-repeat: no-repeat;
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
@@ -51,20 +52,33 @@ svg {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -16px; /* gutter size offset */
+  margin-left: -20px; /* gutter size offset */
   width: auto;
 }
 .my-masonry-grid_column {
-  padding-left: 16px; /* gutter size */
+  padding-left: 20px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
 .my-masonry-grid_column > div {
   /* change div to reference your elements you put in <Masonry> */
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .lty-playbtn {
   visibility: hidden;
+}
+
+.bg-gradient {
+  background-color: hsla(3, 100%, 96%, 1);
+  background-image: radial-gradient(
+      at 37% 86%,
+      hsla(356, 42%, 85%, 1) 20px,
+      transparent 50%
+    ),
+    radial-gradient(at 58% 31%, hsla(280, 35%, 83%, 1) 0px, transparent 50%),
+    radial-gradient(at 75% 60%, hsla(331, 42%, 90%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 34%, hsla(300, 32%, 88%, 1) 0px, transparent 50%),
+    radial-gradient(at 38% 28%, hsla(229, 80%, 80%, 1) 100px, transparent 80%);
 }

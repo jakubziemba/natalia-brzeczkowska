@@ -57,7 +57,7 @@ export default function About({ data }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
-            className="overflow-hidden rounded-[40px]"
+            className="overflow-hidden rounded-[28px] md:rounded-[36px]"
           >
             <motion.div
               initial={{
@@ -84,7 +84,7 @@ export default function About({ data }) {
             </motion.div>
           </motion.div>
           <div className="flex flex-1 flex-col gap-4 py-12">
-            <div className="max-w-2xl space-y-16 text-center font-serif text-2xl font-[420] md:text-4xl md:leading-normal md:tracking-[-0.015em]">
+            <div className="max-w-xl space-y-16 text-pretty text-center font-serif text-3xl font-[450] leading-normal md:max-w-2xl md:text-5xl md:leading-normal md:tracking-[-0.025em]">
               <PortableText
                 value={fields.description}
                 components={components}

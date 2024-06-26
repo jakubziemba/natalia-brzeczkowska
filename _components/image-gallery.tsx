@@ -44,22 +44,22 @@ export default function ImageGallery({
                   });
                 }
               }}
-              className="group relative isolate origin-top cursor-pointer select-none overflow-hidden rounded-[28px]"
+              className="group relative isolate origin-top cursor-pointer select-none overflow-hidden rounded-[36px]"
             >
               <motion.div
                 initial={{
-                  transform: "translate(0px, 20px) scale(1.1)",
+                  scale: 1.1,
                 }}
                 whileInView={{
-                  transform: "translate(0px, 0px) scale(1)",
+                  scale: 1,
                 }}
                 transition={{
                   type: "spring",
                   bounce: 0,
-                  duration: 1,
+                  duration: 0.8,
                 }}
                 viewport={{ margin: "-15% ", once: true }}
-                className="place-items-centerh-full grid w-auto origin-top"
+                className="place-items-centerh-full grid w-auto origin-top overflow-hidden rounded-[36px]"
               >
                 <Image
                   src={imageUrl}

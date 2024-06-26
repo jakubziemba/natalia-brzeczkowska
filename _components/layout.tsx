@@ -11,7 +11,7 @@ export default function Layout({
   style?: React.CSSProperties;
 }) {
   return (
-    <motion.div style={style}>
+    <div className="relative pt-[var(--nav-height)]" style={style}>
       <Nav />
       <motion.main
         initial={{ opacity: 0 }}
@@ -20,6 +20,6 @@ export default function Layout({
       >
         {children}
       </motion.main>
-    </motion.div>
+    </div>
   );
 }
