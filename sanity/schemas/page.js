@@ -21,8 +21,12 @@ export default {
       title: "Fields",
       of: [
         {
-          type: "about",
+          type: "object",
           title: "About",
+        },
+        {
+          type: "object",
+          title: "Contact",
         },
       ],
     },

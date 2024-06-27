@@ -1,4 +1,5 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
 import {
@@ -9,6 +10,7 @@ import {
 } from "framer-motion";
 import NavigationLink from "./link";
 import useMeasure from "react-use-measure";
+import { tw } from "@/utils/tailwind";
 
 const links = [
   { id: 0, href: "/commercials", label: "Commercials" },
@@ -24,6 +26,7 @@ export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const pathname = usePathname();
 
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
@@ -37,7 +40,7 @@ export default function Nav() {
     }
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // get nav height and set it as css variable
     if (navRef.current) {
       const navHeight = navRef.current.getBoundingClientRect().height;
@@ -57,12 +60,13 @@ export default function Nav() {
   }, [showMenu]);
 
   return (
-    <div className="fixed top-2 z-20 mx-auto w-full px-4">
+    <div className="fixed top-1 z-20 mx-auto w-full px-4">
       <motion.nav
         ref={navRef}
         animate={isHidden ? "hidden" : "visible"}
         whileHover="visible"
         onFocusCapture={() => setIsHidden(false)}
+        onClick={() => isHidden && setIsHidden(false)}
         variants={{
           hidden: {
             y: "-88%",
@@ -72,13 +76,13 @@ export default function Nav() {
           },
         }}
         transition={{ duration: 0.2 }}
-        className="relative top-0 mx-auto flex max-w-6xl flex-col border-b border-red/5 bg-white py-4 pl-6 pr-3 font-serif text-lg font-[450] 2xl:mx-auto"
+        className="mx-auto flex max-w-6xl flex-col border-b border-red/5 bg-white py-4 pl-6 pr-3 font-serif text-lg font-[450] 2xl:mx-auto"
         style={{ borderRadius: "36px" }}
       >
         <div className="flex flex-row items-center justify-between">
           <Link
             href="/"
-            className="flex w-max font-serif text-2xl tracking-wide text-red"
+            className="flex w-max font-serif text-2xl text-red transition-all duration-300 hover:font-[550]"
           >
             Natimakeupik
           </Link>
@@ -87,26 +91,13 @@ export default function Nav() {
               className="rounded-full bg-lightred px-4 py-1.5 tracking-wide text-red md:invisible md:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={showMenu ? "open" : "closed"}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    type: "tween",
-                    duration: 0.1,
-                  }}
-                >
-                  {showMenu ? "Close" : "Menu"}
-                </motion.span>
-              </AnimatePresence>
+              <span>{showMenu ? "Close" : "Menu"}</span>
             </button>
           ) : null}
           <ul className="invisible relative z-20 hidden text-lg font-[450] leading-none tracking-wide text-red md:visible md:flex">
             {links.map((link, index) => {
               return (
-                <li key={index}>
+                <li key={index} className="relative w-max">
                   <NavigationLink link={link} />
                 </li>
               );
