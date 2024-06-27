@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
@@ -10,7 +10,6 @@ import {
 } from "framer-motion";
 import NavigationLink from "./link";
 import useMeasure from "react-use-measure";
-import { tw } from "@/utils/tailwind";
 
 const links = [
   { id: 0, href: "/commercials", label: "Commercials" },
@@ -40,7 +39,7 @@ export default function Nav() {
     }
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // get nav height and set it as css variable
     if (navRef.current) {
       const navHeight = navRef.current.getBoundingClientRect().height;
