@@ -48,11 +48,9 @@ export default function ImageGallery({
             >
               <motion.div
                 initial={{
-                  scale: 1.1,
+                  transform: "scale(1.1)",
                 }}
-                whileInView={{
-                  scale: 1,
-                }}
+                whileInView={{ transform: "scale(1)" }}
                 transition={{
                   type: "spring",
                   bounce: 0,
@@ -68,40 +66,38 @@ export default function ImageGallery({
                   priority
                   loading="eager"
                   alt={session.name || "photosession"}
-                  sizes="80vw, (min-width: 1024px) 70vw"
                   className="origin-top"
                 />
               </motion.div>
-              <AnimatePresence>
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  animate={{
-                    opacity: isActive ? 1 : 0,
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{
-                    type: "tween",
-                    duration: 0.18,
-                  }}
-                  className={tw(
-                    "absolute inset-0 isolate flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent bg-clip-text text-white backdrop-blur-xl",
-                  )}
-                >
-                  <div className="pointer-events-none relative p-6">
-                    <p className="font-serif text-4xl md:text-5xl">
-                      {session.name}
-                    </p>
-                    <p className="font-serif text-white/80 md:text-lg">
-                      {session.photosAuthor}
-                    </p>
-                    {session.name && session.photosAuthor ? (
-                      <div className="absolute bottom-0 left-0 right-0 h-[150%] w-full bg-gradient-to-t from-black/20 to-transparent mix-blend-difference" />
-                    ) : null}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: isActive ? 1 : 0,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  type: "tween",
+                  duration: 0.18,
+                  ease: "easeInOut",
+                }}
+                className={tw(
+                  "absolute inset-0 isolate flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent bg-clip-text text-white backdrop-blur-xl",
+                )}
+              >
+                <div className="pointer-events-none relative p-6">
+                  <p className="font-serif text-3xl md:text-4xl lg:text-5xl">
+                    {session.name}
+                  </p>
+                  <p className="font-serif text-white/80 md:text-sm lg:text-lg">
+                    {session.photosAuthor}
+                  </p>
+                  {session.name && session.photosAuthor ? (
+                    <div className="absolute bottom-0 left-0 right-0 h-[150%] w-full bg-gradient-to-t from-black/20 to-transparent mix-blend-difference" />
+                  ) : null}
+                </div>
+              </motion.div>
             </div>
           );
         }),
