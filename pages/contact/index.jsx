@@ -72,24 +72,19 @@ export default function Contact() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              whileTap={{
-                scale: 0.95,
-                transition: {
-                  type: "spring",
-                  bounce: 0,
-                },
-              }}
+              whileTap={{ scale: 0.98 }}
+              whileHover={{ fontWeight: 550, transition: { duration: 0.25 } }}
               transition={{
                 type: "tween",
                 ease: "easeInOut",
-                duration: 0.34,
+                duration: 0.25,
                 // delay: 0.07,
               }}
               onClick={() => handleCopy()}
-              className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4 transition-all duration-300 hover:font-[550]"
+              className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4"
             >
               nbrzeczkowska@gmail.com
-              <span className="absolute -bottom-2 left-0 h-0.5 w-full bg-red transition-all duration-300 group-hover:bottom-0 lg:h-1" />
+              <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-red transition-all duration-300 group-hover:bottom-0" />
             </motion.p>
           </div>
           <motion.div
