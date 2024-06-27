@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
 import {
@@ -25,7 +24,6 @@ export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const pathname = usePathname();
 
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
