@@ -1,5 +1,3 @@
-import withPlaiceholder from "@plaiceholder/next";
-
 export default (phase, { defaultConfig }) => {
   /**
    * @type {import('next').NextConfig}
@@ -16,5 +14,6 @@ export default (phase, { defaultConfig }) => {
       ],
     },
   };
-  return withPlaiceholder(nextConfig);
+
+  return nextConfig;
 };

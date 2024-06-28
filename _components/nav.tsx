@@ -79,9 +79,9 @@ export default function Nav() {
         <div className="flex flex-row items-center justify-between">
           <Link
             href="/"
-            className="flex w-max font-serif text-2xl text-red transition-all duration-300 hover:font-[550]"
+            className="flex w-max font-serif text-2xl text-red transition-all duration-300 hover:font-[520]"
           >
-            Natimakeupik
+            Nati.makeupik
           </Link>
           {isMobile ? (
             <button
