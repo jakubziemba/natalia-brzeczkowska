@@ -8,7 +8,7 @@ import PageHeading from "@/_components/page-heading";
 
 export async function getStaticProps() {
   const data =
-    await client.fetch(groq`*[_type == "photosession" ] | order(name asc){
+    await client.fetch(groq`*[_type == "photosession" ] | order(orderRank){
     ...,
      "imageAssets": imageAssets[].asset->url,
      "lqip": imageAssets[].asset->metadata.lqip,

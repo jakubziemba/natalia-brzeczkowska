@@ -1,38 +1,7 @@
-// import { defineField, defineType } from "sanity";
 import {
   orderRankField,
   orderRankOrdering,
 } from "@sanity/orderable-document-list";
-
-// export const Photosession = defineType({
-//   name: "photosession",
-//   title: "Photosession",
-//   fields: [
-//     defineField({
-//       name: "name",
-//       title: "Name",
-//       type: "string",
-//     }),
-//     defineField({
-//       name: "photosAuthor",
-//       title: "Photos by:",
-//       type: "string",
-//     }),
-//     defineField({
-//       name: "imageAssets",
-//       title: "Image Assets",
-//       type: "array",
-//       of: [
-//         {
-//           type: "image",
-//           options: {
-//             hotspot: true, // Enables hotspot for precise cropping
-//           },
-//         },
-//       ],
-//     }),
-//   ],
-// });
 
 export default {
   name: "photosession",
@@ -49,8 +18,10 @@ export default {
       type: "string",
       title: "Photos by:",
     },
-    //  // OR placing new documents on top
-    orderRankField({ type: "category", newItemPosition: "before" }),
+    orderRankField({
+      type: "string",
+      hidden: true,
+    }),
     {
       name: "imageAssets",
       title: "Image Assets",

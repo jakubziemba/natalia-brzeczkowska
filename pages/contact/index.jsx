@@ -25,17 +25,11 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="relative flex min-h-[calc(100vh-var(--nav-height))] flex-col justify-center px-4 pb-24 pt-24 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
-        {/* <PageHeading
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
-        >
-          Contact
-        </PageHeading> */}
+      <section className="min-h-[calc(100vh-var(--nav-height))] px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
+        <PageHeading>Want to talk?</PageHeading>
 
-        <div className="flex flex-col gap-20 text-center font-serif text-3xl font-[450] lg:text-6xl">
-          <motion.h2
+        <div className="flex flex-1 flex-col justify-center gap-20 text-center font-serif text-3xl font-[450] lg:text-6xl">
+          {/* <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -47,7 +41,7 @@ export default function Contact() {
             className="flex flex-col gap-6 text-6xl"
           >
             Want to talk?
-          </motion.h2>
+          </motion.h2> */}
           <div className="flex flex-col gap-4">
             <AnimatePresence mode="wait">
               <motion.p
@@ -84,7 +78,6 @@ export default function Contact() {
               className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4"
             >
               nbrzeczkowska@gmail.com
-              <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-red transition-all duration-300 group-hover:bottom-0" />
             </motion.p>
           </div>
           <motion.div

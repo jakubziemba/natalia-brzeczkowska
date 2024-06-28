@@ -6,7 +6,8 @@ import PageHeading from "@/_components/page-heading";
 import VideoSlot from "@/_components/video-slot";
 
 export async function getStaticProps() {
-  const data = await client.fetch(groq`*[_type == "music-video"]{
+  const data =
+    await client.fetch(groq`*[_type == "music-video"] | order(orderRank){
     ...,
     "videoPlaceholder": videoPlaceholder.asset->url
   }`);

@@ -1,3 +1,8 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
+
 export default {
   name: "music-video",
   type: "document",
@@ -28,5 +33,9 @@ export default {
       type: "image",
       title: "Video placeholder",
     },
+    orderRankField({
+      type: "string",
+      hidden: true,
+    }),
   ],
 };

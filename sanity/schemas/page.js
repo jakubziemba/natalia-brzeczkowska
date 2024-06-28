@@ -15,20 +15,20 @@ export default {
       title: "slug",
       required: true,
     },
-    {
-      name: "fields",
-      type: "array",
-      title: "Fields",
-      of: [
-        {
-          type: "object",
-          title: "About",
-        },
-        {
-          type: "object",
-          title: "Contact",
-        },
-      ],
-    },
+    // {
+    //   name: "fields",
+    //   type: "array",
+    //   title: "Fields",
+    //   of: [
+    //     {
+    //       type: "object",
+    //       title: "About",
+    //     },
+    //     {
+    //       type: "object",
+    //       title: "Contact",
+    //     },
+    //   ],
+    // },
   ],
 };

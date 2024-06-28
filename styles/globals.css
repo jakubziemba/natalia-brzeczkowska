@@ -14,10 +14,10 @@ body {
       hsla(356, 42%, 85%, 0.8) 20px,
       transparent 90%
     ),
-    radial-gradient(at 58% 31%, hsla(280, 35%, 83%, 1) 30px, transparent 25%),
-    radial-gradient(at 75% 60%, hsla(331, 42%, 90%, 1) 50px, transparent 40%),
-    radial-gradient(at 9% 34%, hsla(300, 32%, 88%, 1) 100px, transparent 70%),
-    radial-gradient(at 38% 28%, hsla(229, 80%, 90%, 1) 0px, transparent 30%);
+    radial-gradient(at 58% 31%, hsla(280, 35%, 84%, 1) 30px, transparent 45%),
+    radial-gradient(at 75% 60%, hsla(331, 42%, 87%, 1) 50px, transparent 40%),
+    radial-gradient(at 35% 34%, hsla(300, 32%, 85%, 1) 80px, transparent 70%),
+    radial-gradient(at 76% 46%, hsla(229, 80%, 85%, 1) 10px, transparent 50%);
   background-repeat: no-repeat;
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
