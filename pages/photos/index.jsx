@@ -1,6 +1,5 @@
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
-import { useState } from "react";
 import Layout from "../../_components/layout";
 import ImageGallery from "@/_components/image-gallery";
 import { motion } from "framer-motion";
@@ -22,20 +21,11 @@ export async function getStaticProps() {
 }
 
 export default function Photos({ data }) {
-  const [showDetails, setShowDetails] = useState({
-    sessionId: null,
-    imageIndex: null,
-  });
-
   return (
     <Layout>
       <motion.section className="relative px-4 pb-24 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
         <PageHeading>Photos</PageHeading>
-        <ImageGallery
-          data={data}
-          showDetails={showDetails}
-          setShowDetails={setShowDetails}
-        />
+        <ImageGallery data={data} />
       </motion.section>
     </Layout>
   );

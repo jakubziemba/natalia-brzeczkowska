@@ -1,5 +1,5 @@
-// import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { tw } from "@/utils/tailwind";
 import Masonry from "react-masonry-css";
@@ -9,15 +9,11 @@ const breakpointColumnsObj = {
   600: 1,
 };
 
-export default function ImageGallery({
-  data,
-  showDetails,
-  setShowDetails,
-}: {
-  data: any;
-  showDetails: any;
-  setShowDetails: any;
-}) {
+export default function ImageGallery({ data }: { data: any }) {
+  const [showDetails, setShowDetails] = useState({
+    sessionId: -1,
+    imageIndex: -1,
+  });
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
@@ -35,7 +31,7 @@ export default function ImageGallery({
               data-index={index}
               onClick={() => {
                 if (isActive) {
-                  setShowDetails({ sessionId: null, imageIndex: null });
+                  setShowDetails({ sessionId: -1, imageIndex: -1 });
                   return;
                 } else {
                   setShowDetails({

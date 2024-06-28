@@ -37,7 +37,7 @@ export default function Home() {
               delay: 1.5,
               ease,
             }}
-            className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[420] tracking-wide text-red md:visible md:flex md:flex-col"
+            className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:flex md:flex-col"
           >
             <span className="relative -left-8 flex flex-row gap-4">
               <StarAnimated />
@@ -55,12 +55,12 @@ export default function Home() {
             </span>
             <Link
               href="/about"
-              className="flex w-max rounded-full border border-red bg-red px-10 py-3 text-lg text-lightred transition-all hover:bg-lightred hover:text-red"
+              className="flex w-max rounded-full border border-red bg-red px-10 py-3 text-xl font-[500] tracking-normal text-lightred transition-all duration-300 hover:bg-lightred hover:text-red active:scale-[0.96]"
             >
               Get to know me better
             </Link>
           </motion.div>
-          <motion.div className="top-[-84px absolute inset-0 z-0 flex flex-col items-center justify-center md:visible lg:left-[45%]">
+          <motion.div className="absolute inset-0 top-[-54px] z-0 flex flex-col items-center justify-center md:visible lg:left-[45%]">
             <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
           </motion.div>
         </div>

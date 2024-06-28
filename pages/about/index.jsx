@@ -1,11 +1,11 @@
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
-import { PortableText } from "@portabletext/react";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import Layout from "@/_components/layout";
 import Image from "next/image";
 import PageHeading from "@/_components/page-heading";
-
-import Layout from "@/_components/layout";
+import { PortableText } from "@portabletext/react";
 
 const components = {
   block: {
@@ -91,6 +91,25 @@ export default function About({ data }) {
               />
             </div>
           </div>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ margin: "-15%", once: true }}
+            transition={{
+              type: "tween",
+              ease: "easeInOut",
+              duration: 0.5,
+            }}
+            className="mx-auto flex items-center justify-center py-12"
+          >
+            <Link
+              href="/contact"
+              className="flex w-max rounded-full border border-red bg-red px-10 py-3 font-serif text-2xl font-[500] tracking-normal text-lightred transition-all duration-300 hover:bg-lightred hover:text-red active:scale-[0.96]"
+              scroll={false}
+            >
+              Get in touch
+            </Link>
+          </motion.div>
         </div>
       </section>
     </Layout>

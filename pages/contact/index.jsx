@@ -52,7 +52,8 @@ export default function Contact() {
                 transition={{
                   type: "tween",
                   ease: "easeInOut",
-                  duration: 0.24,
+                  duration: 0.3,
+                  delay: 0.05,
                 }}
                 className="text-xl"
               >
@@ -71,8 +72,8 @@ export default function Contact() {
               transition={{
                 type: "tween",
                 ease: "easeInOut",
-                duration: 0.25,
-                // delay: 0.07,
+                duration: 0.3,
+                delay: 0.07,
               }}
               onClick={() => handleCopy()}
               className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4"
@@ -87,7 +88,7 @@ export default function Contact() {
               type: "tween",
               ease: "easeInOut",
               duration: 0.34,
-              delay: 0.15,
+              delay: 0.12,
             }}
             className="flex flex-col gap-10 text-4xl lg:text-5xl"
           >
