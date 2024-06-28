@@ -91,7 +91,7 @@ export default function ImageGallery({
                     {session.name}
                   </p>
                   <p className="font-serif text-white/80 md:text-sm lg:text-lg">
-                    {session.photosAuthor}
+                    photos: {session.photosAuthor}
                   </p>
                   {session.name && session.photosAuthor ? (
                     <div className="absolute bottom-0 left-0 right-0 h-[150%] w-full bg-gradient-to-t from-black/20 to-transparent mix-blend-difference" />
