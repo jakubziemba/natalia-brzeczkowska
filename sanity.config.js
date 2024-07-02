@@ -15,12 +15,12 @@ import { schema } from "./sanity/schema";
 
 export default defineConfig([
   {
-    basePath: "/studio/production",
+    basePath: "/studio/staging",
     projectId,
-    dataset,
+    dataset: "staging",
     schema,
-    title: "Production",
-    name: "production",
+    title: "Staging",
+    name: "staging",
     plugins: [
       structureTool({
         structure: (S, context) => {
@@ -60,12 +60,12 @@ export default defineConfig([
     ],
   },
   {
-    basePath: "/studio/staging",
+    basePath: "/studio/production",
     projectId,
-    dataset: "staging",
+    dataset,
     schema,
-    title: "Staging",
-    name: "staging",
+    title: "Production",
+    name: "production",
     plugins: [
       structureTool({
         structure: (S, context) => {
