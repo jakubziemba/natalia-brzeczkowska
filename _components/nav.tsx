@@ -66,7 +66,7 @@ export default function Nav() {
         onClick={() => isHidden && setIsHidden(false)}
         variants={{
           hidden: {
-            y: "-88%",
+            y: "-86%",
           },
           visible: {
             y: "0%",
