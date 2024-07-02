@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { client } from "../../sanity/lib/client";
 import { groq } from "next-sanity";
 import Link from "next/link";
@@ -48,70 +49,75 @@ export default function About({ data }) {
   const fields = data.fields;
 
   return (
-    <Layout>
-      <section className="pb-24 2xl:mx-auto 2xl:max-w-screen-2xl">
-        <PageHeading>About me</PageHeading>
+    <>
+      <Head>
+        <title>Nati Makeupik &#x2022; About</title>
+      </Head>
+      <Layout>
+        <section className="pb-24 2xl:mx-auto 2xl:max-w-screen-2xl">
+          <PageHeading>About me</PageHeading>
 
-        <div className="flex flex-col items-center justify-center gap-8 px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
-            className="overflow-hidden rounded-[28px] md:rounded-[36px]"
-          >
+          <div className="flex flex-col items-center justify-center gap-8 px-6">
             <motion.div
-              initial={{
-                scale: 1.1,
-              }}
-              animate={{
-                scale: 1,
-              }}
-              transition={{
-                type: "spring",
-                bounce: 0,
-                duration: 1,
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
+              className="overflow-hidden rounded-[28px] md:rounded-[36px]"
             >
-              <Image
-                src={fields?.image || ""}
-                width={450}
-                height={700}
-                priority
-                loading="eager"
-                alt="Natalia Brzęczkowska"
-                className="h-auto w-full max-w-2xl flex-1 object-cover"
-              />
+              <motion.div
+                initial={{
+                  scale: 1.1,
+                }}
+                animate={{
+                  scale: 1,
+                }}
+                transition={{
+                  type: "spring",
+                  bounce: 0,
+                  duration: 1,
+                }}
+              >
+                <Image
+                  src={fields?.image || ""}
+                  width={450}
+                  height={700}
+                  priority
+                  loading="eager"
+                  alt="Natalia Brzęczkowska"
+                  className="h-auto w-full max-w-2xl flex-1 object-cover"
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
-          <div className="flex flex-1 flex-col gap-4 py-12">
-            <div className="max-w-xl space-y-16 text-pretty text-center font-serif text-3xl font-[450] leading-normal md:max-w-2xl md:text-5xl md:leading-normal md:tracking-[-0.025em]">
-              <PortableText
-                value={fields.description}
-                components={components}
-              />
+            <div className="flex flex-1 flex-col gap-4 py-12">
+              <div className="max-w-xl space-y-16 text-pretty text-center font-serif text-3xl font-[450] leading-normal md:max-w-2xl md:text-5xl md:leading-normal md:tracking-[-0.025em]">
+                <PortableText
+                  value={fields.description}
+                  components={components}
+                />
+              </div>
             </div>
-          </div>
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ margin: "-15%", once: true }}
-            transition={{
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.5,
-            }}
-            className="mx-auto flex items-center justify-center py-12"
-          >
-            <Link
-              href="/contact"
-              className="flex w-max rounded-full border border-red bg-red px-10 py-3 font-serif text-2xl font-[500] tracking-normal text-lightred transition-all duration-300 hover:bg-lightred hover:text-red active:scale-[0.96]"
-              scroll={false}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ margin: "-15%", once: true }}
+              transition={{
+                type: "tween",
+                ease: "easeInOut",
+                duration: 0.5,
+              }}
+              className="mx-auto flex items-center justify-center py-12"
             >
-              Get in touch
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </Layout>
+              <Link
+                href="/contact"
+                className="flex w-max rounded-full border border-red bg-red px-10 py-3 font-serif text-2xl font-[500] tracking-normal text-lightred transition-all duration-300 hover:bg-lightred hover:text-red active:scale-[0.96]"
+                scroll={false}
+              >
+                Get in touch
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 }

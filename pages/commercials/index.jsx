@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import { motion } from "framer-motion";
@@ -24,41 +25,45 @@ export async function getStaticProps() {
 
 export default function Commercials({ data }) {
   return (
-    <Layout>
-      <section className="relative px-4 pb-24 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
-        <PageHeading>Commercials</PageHeading>
+    <>
+      <Head>
+        <title>Nati Makeupik &#x2022; Commercials</title>
+      </Head>
+      <Layout>
+        <section className="relative px-4 pb-24 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
+          <PageHeading>Commercials</PageHeading>
 
-        <div className="relative mx-auto flex max-w-screen-lg flex-col items-center justify-center gap-24 md:px-10">
-          {data.map((project) => {
-            return (
-              <motion.div
-                key={project._id}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ margin: "-15%", once: true }}
-                transition={{
-                  type: "tween",
-                  ease: "easeInOut",
-                  duration: 0.25,
-                }}
-                className="w-full max-w-screen-lg overflow-hidden"
-              >
-                <div className="relative isolate min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
-                  <VideoSlot project={project} />
-                </div>
-                <div>
-                  <motion.h2
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ margin: "-10%", once: true }}
-                    transition={{
-                      type: "tween",
-                      ease: "easeInOut",
-                      duration: 0.25,
-                    }}
-                    className="relative flex-1 pt-6 font-serif text-3xl font-[450] text-red md:pt-8 md:text-4xl"
-                  >
-                    {/* {client.split(" ").map((word, index) => (
+          <div className="relative mx-auto flex max-w-screen-lg flex-col items-center justify-center gap-24 md:px-10">
+            {data.map((project) => {
+              return (
+                <motion.div
+                  key={project._id}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ margin: "-15%", once: true }}
+                  transition={{
+                    type: "tween",
+                    ease: "easeInOut",
+                    duration: 0.25,
+                  }}
+                  className="w-full max-w-screen-lg overflow-hidden"
+                >
+                  <div className="relative isolate min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
+                    <VideoSlot project={project} />
+                  </div>
+                  <div>
+                    <motion.h2
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ margin: "-10%", once: true }}
+                      transition={{
+                        type: "tween",
+                        ease: "easeInOut",
+                        duration: 0.25,
+                      }}
+                      className="relative flex-1 pt-6 font-serif text-3xl font-[450] text-red md:pt-8 md:text-4xl"
+                    >
+                      {/* {client.split(" ").map((word, index) => (
                       <span key={word}>
                         {word.split("").map((letter, letterIndex) => (
                           <motion.span
@@ -84,21 +89,22 @@ export default function Commercials({ data }) {
                         ))}{" "}
                       </span>
                     ))} */}
-                    {project.client}
-                  </motion.h2>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-        <div className="mx-auto max-w-screen-lg pb-24 pt-36 text-center font-serif text-4xl font-[450] leading-normal md:px-10 lg:text-5xl lg:leading-normal 2xl:max-w-2xl 2xl:px-10">
-          <h4 className="mx-auto w-full max-w-2xl">
-            Assisted in commercials of Play, VISA, Santander, Google, Biedronka,
-            Fanta, Media Expert, Eurosport, Huawei, BMW, Redbull, H&M, Lewiatan
-            and many more.
-          </h4>
-        </div>
-      </section>
-    </Layout>
+                      {project.client}
+                    </motion.h2>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+          <div className="mx-auto max-w-screen-lg pb-24 pt-36 text-center font-serif text-4xl font-[450] leading-normal md:px-10 lg:text-5xl lg:leading-normal 2xl:max-w-2xl 2xl:px-10">
+            <h4 className="mx-auto w-full max-w-2xl">
+              Assisted in commercials of Play, VISA, Santander, Google,
+              Biedronka, Fanta, Media Expert, Eurosport, Huawei, BMW, Redbull,
+              H&M, Lewiatan and many more.
+            </h4>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 }
