@@ -1,3 +1,8 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
+
 export default {
   name: "photosession",
   type: "document",
@@ -13,6 +18,10 @@ export default {
       type: "string",
       title: "Photos by:",
     },
+    orderRankField({
+      type: "string",
+      hidden: true,
+    }),
     {
       name: "imageAssets",
       title: "Image Assets",

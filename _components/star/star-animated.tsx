@@ -9,7 +9,7 @@ type StarAnimatedProps = {
 
 export default function StarAnimated({ className }: StarAnimatedProps) {
   return (
-    <motion.span
+    <motion.div
       animate={{
         rotate: "360deg",
         transition: {
@@ -20,9 +20,9 @@ export default function StarAnimated({ className }: StarAnimatedProps) {
           delay: 2,
         },
       }}
-      className={`${className || ""} w-min origin-center`}
+      className={`${className || ""} h-full w-max origin-center`}
     >
       <StarIcon />
-    </motion.span>
+    </motion.div>
   );
 }

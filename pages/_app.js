@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { AnimatePresence } from "framer-motion";
+
+// ZODIAK & PUBLIC SANS?
 const serif = localFont({
   src: "../public/fonts/Boska.woff2",
   display: "swap",
@@ -15,7 +17,7 @@ const sans = localFont({
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <div className={`${serif.variable} ${sans.variable} bg-lightred`}>
+    <div className={`${serif.variable} ${sans.variable}`}>
       <AnimatePresence mode="wait">
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>

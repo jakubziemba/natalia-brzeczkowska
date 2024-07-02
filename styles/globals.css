@@ -2,34 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
 :root {
-  --nav-height: 72px;
+  --color-red: #c02400;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--color-red);
+  background-color: hsla(3, 100%, 96%, 1);
+  background-image: radial-gradient(
+      at 37% 86%,
+      hsla(356, 42%, 85%, 0.8) 20px,
+      transparent 90%
+    ),
+    radial-gradient(at 58% 31%, hsla(280, 35%, 84%, 1) 30px, transparent 45%),
+    radial-gradient(at 75% 60%, hsla(331, 42%, 87%, 1) 50px, transparent 40%),
+    radial-gradient(at 35% 34%, hsla(300, 32%, 85%, 1) 80px, transparent 70%),
+    radial-gradient(at 76% 46%, hsla(229, 80%, 85%, 1) 10px, transparent 50%);
+  background-repeat: no-repeat;
   font-smooth: antialiased;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
 }
 
@@ -42,14 +33,52 @@ svg {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-@layer components {
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
   .grid-12-cols {
     @apply grid grid-cols-12 gap-2;
   }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+    margin-bottom: 1em;
+  }
 }
 
-main > section {
-  /* margin-top: var(--nav-height); */
+.masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -20px; /* gutter size offset */
+  width: auto;
+}
+.masonry-grid_column {
+  padding-left: 20px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 20px;
+}
+
+.lty-playbtn {
+  visibility: hidden;
+}
+
+.bg-gradient {
+  background-color: hsla(3, 100%, 96%, 1);
+  background-image: radial-gradient(
+      at 37% 86%,
+      hsla(356, 42%, 85%, 1) 20px,
+      transparent 50%
+    ),
+    radial-gradient(at 58% 31%, hsla(280, 35%, 83%, 1) 0px, transparent 50%),
+    radial-gradient(at 75% 60%, hsla(331, 42%, 90%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 34%, hsla(300, 32%, 88%, 1) 0px, transparent 50%),
+    radial-gradient(at 38% 28%, hsla(229, 80%, 80%, 1) 100px, transparent 80%);
 }

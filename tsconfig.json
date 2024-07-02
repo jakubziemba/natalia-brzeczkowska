@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,10 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "pages/about/index.js",
-    "pages/commercials/index.js",
-    "pages/music-videos/index.js",
-    "pages/photoshoots/index.js"
+    "pages"
   ],
   "exclude": ["node_modules"]
 }
