@@ -11,6 +11,9 @@ export default function Document() {
         />
         <meta property="og:url" content="https://natimakeupik.com" />
         <meta property="og:image" content="/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="natimakeupik.com" />
+        <meta property="twitter:url" content="https://natimakeupik.com" />
         <meta name="twitter:title" content="Nati Makeupik" key="title" />
         <meta
           name="twitter:description"
