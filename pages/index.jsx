@@ -24,7 +24,7 @@ export default function Home() {
             className="relative top-0 z-10 mx-auto flex flex-row gap-4 lg:top-14"
           >
             <StarAnimated className="invisible hidden md:visible md:block" />
-            <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 lg:text-7xl xl:text-[130px]">
+            <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 md:text-7xl xl:text-[130px]">
               <span>Natalia</span>
               <span>Brzęczkowska</span>
             </h1>
@@ -37,7 +37,7 @@ export default function Home() {
               delay: 1.5,
               ease,
             }}
-            className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:flex md:flex-col"
+            className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:-left-10 md:flex md:flex-col"
           >
             <span className="relative -left-8 flex flex-row gap-4">
               <StarAnimated />
@@ -60,7 +60,7 @@ export default function Home() {
               Get to know me better
             </Link>
           </motion.div>
-          <motion.div className="absolute inset-0 top-[-54px] z-0 flex flex-col items-center justify-center md:visible lg:left-[45%]">
+          <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[20%] md:left-[45%] lg:top-[-54px]">
             <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
           </motion.div>
         </div>

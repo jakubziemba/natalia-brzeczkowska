@@ -17,8 +17,8 @@ export default function ImageGallery({ data }: { data: any }) {
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
+      className="masonry-grid"
+      columnClassName="masonry-grid_column"
     >
       {data.map((session: any) =>
         session.imageAssets.map((imageUrl: string, index: number) => {

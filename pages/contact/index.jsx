@@ -67,7 +67,10 @@ export default function Contact() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{
+                scale: 0.98,
+                transition: { delay: 0, duration: 0.3, ease: "easeInOut" },
+              }}
               whileHover={{ fontWeight: 550, transition: { duration: 0.25 } }}
               transition={{
                 type: "tween",
