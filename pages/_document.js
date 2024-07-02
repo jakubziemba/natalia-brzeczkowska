@@ -12,7 +12,11 @@ export default function Document() {
         <meta property="og:url" content="https://natimakeupik.com" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content="/og-image.png" />
+        <meta
+          property="og:image"
+          content="https://natimakeupik.com/og-image.png"
+        />
+        <meta property="og:image:alt" content="Nati Makeupik" />
         <meta property="og:image:type" content="image/png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="natimakeupik.com" />
@@ -22,7 +26,11 @@ export default function Document() {
           name="twitter:description"
           content="A Warsaw-based make up artist, working since 2019 in many industry sectors including TV, theatre, fashion and film."
         />
-        <meta name="twitter:image" content="/twitter-image.png" />
+        <meta
+          name="twitter:image"
+          content="https://natimakeupik.com/twitter-image.png"
+        />
+        <meta name="twitter:image:alt" content="Nati Makeupik" />
       </Head>
       <body>
         <Main />
