@@ -4,6 +4,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta
+          property="description"
+          content="A Warsaw-based make up artist, working since 2019 in many industry sectors including TV, theatre, fashion and film."
+        />
+        <meta property="og:site_name" content="Nati Makeupik"></meta>
         <meta property="og:title" content="Nati Makeupik" key="title" />
         <meta
           property="og:description"

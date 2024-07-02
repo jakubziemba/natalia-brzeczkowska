@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/third-parties": "^14.2.4",
     "@portabletext/react": "^3.1.0",
+    "@sanity-typed/types": "^6.3.5",
     "@sanity/image-url": "^1.0.2",
     "@sanity/orderable-document-list": "^1.2.1",
     "@sanity/vision": "^3.48.1",
