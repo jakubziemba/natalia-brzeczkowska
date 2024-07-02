@@ -18,6 +18,8 @@ export default function Document() {
         />
         <meta property="og:image:alt" content="Nati Makeupik" />
         <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="672" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="natimakeupik.com" />
         <meta property="twitter:url" content="https://natimakeupik.com" />
@@ -31,6 +33,8 @@ export default function Document() {
           content="https://natimakeupik.com/twitter-image.png"
         />
         <meta name="twitter:image:alt" content="Nati Makeupik" />
+        <meta name="twitter:image:width" content="1200" />
+        <meta name="twitter:image:height" content="672" />
       </Head>
       <body>
         <Main />
