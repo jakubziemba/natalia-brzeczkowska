@@ -41,7 +41,7 @@ export default function Home() {
                 delay: 1.5,
                 ease,
               }}
-              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col"
+              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col lg:top-20"
             >
               <span className="relative -left-8 flex flex-row gap-4">
                 <StarAnimated />
