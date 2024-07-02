@@ -81,7 +81,7 @@ export default function Nav() {
             href="/"
             className="flex w-max font-serif text-2xl text-red transition-all duration-300 active:scale-[0.96]"
           >
-            Nati.makeupik
+            Nati Makeupik
           </Link>
           {isMobile ? (
             <button
