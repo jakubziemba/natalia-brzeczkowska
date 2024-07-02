@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Layout from "@/_components/layout";
 import PageHeading from "@/_components/page-heading";
 import VideoSlot from "@/_components/video-slot";
+import AnimatedText from "@/_components/animated-text";
 
 const regex =
   /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -97,11 +98,13 @@ export default function Commercials({ data }) {
             })}
           </div>
           <div className="mx-auto max-w-screen-lg pb-24 pt-36 text-center font-serif text-4xl font-[450] leading-normal md:px-10 lg:text-5xl lg:leading-normal 2xl:max-w-2xl 2xl:px-10">
-            <h4 className="mx-auto w-full max-w-2xl">
-              Assisted in commercials of Play, VISA, Santander, Google,
-              Biedronka, Fanta, Media Expert, Eurosport, Huawei, BMW, Redbull,
-              H&M, Lewiatan and many more.
-            </h4>
+            <AnimatedText>
+              <h4 className="mx-auto w-full max-w-2xl">
+                Assisted in commercials of Play, VISA, Santander, Google,
+                Biedronka, Fanta, Media Expert, Eurosport, Huawei, BMW, Redbull,
+                H&M, Lewiatan and many more.
+              </h4>
+            </AnimatedText>
           </div>
         </section>
       </Layout>

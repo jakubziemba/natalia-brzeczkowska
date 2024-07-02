@@ -6,23 +6,15 @@ import { motion } from "framer-motion";
 import Layout from "@/_components/layout";
 import Image from "next/image";
 import PageHeading from "@/_components/page-heading";
+import AnimatedText from "@/_components/animated-text";
 import { PortableText } from "@portabletext/react";
 
 const components = {
   block: {
     normal: ({ children }) => (
-      <motion.p
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ margin: "-15%", once: true }}
-        transition={{
-          type: "tween",
-          ease: "easeInOut",
-          duration: 0.5,
-        }}
-      >
-        {children}
-      </motion.p>
+      <AnimatedText>
+        <p>{children}</p>
+      </AnimatedText>
     ),
   },
 };
