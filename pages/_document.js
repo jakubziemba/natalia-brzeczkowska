@@ -10,7 +10,10 @@ export default function Document() {
           content="A Warsaw-based make up artist, working since 2019 in many industry sectors including TV, theatre, fashion and film."
         />
         <meta property="og:url" content="https://natimakeupik.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
         <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="natimakeupik.com" />
         <meta property="twitter:url" content="https://natimakeupik.com" />

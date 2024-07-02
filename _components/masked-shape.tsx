@@ -33,7 +33,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         delay: 0,
         ease: [0.14, 0.18, 0.21, 0.72],
       }}
-      className="h-auto max-w-sm lg:max-w-2xl"
+      className="h-auto max-w-sm md:max-w-lg lg:max-w-2xl"
       style={
         {
           // transform: "rotate(-8.2deg)",

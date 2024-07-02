@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <Layout>
         <section className="flex min-h-[calc(100svh-var(--nav-height))] items-center justify-center overflow-hidden">
-          <div className="relative -top-4 flex min-h-[calc(100svh-var(--nav-height))] w-full flex-col justify-center gap-4 overflow-hidden lg:px-32 2xl:items-center">
+          <div className="relative -top-4 flex min-h-[calc(100svh-var(--nav-height))] w-full flex-col justify-center gap-4 overflow-hidden md:top-0 lg:px-32 2xl:items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Home() {
                 delay: 1.5,
                 ease,
               }}
-              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:-left-10 md:flex md:flex-col"
+              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col"
             >
               <span className="relative -left-8 flex flex-row gap-4">
                 <StarAnimated />
@@ -64,7 +64,7 @@ export default function Home() {
                 Get to know me better
               </Link>
             </motion.div>
-            <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[20%] md:left-[45%] lg:top-[-54px]">
+            <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[18%] md:left-[55%] lg:top-[-54px]">
               <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
             </motion.div>
           </div>
