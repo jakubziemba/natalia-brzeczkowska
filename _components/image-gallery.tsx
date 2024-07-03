@@ -26,9 +26,6 @@ export default function ImageGallery({ data }: { data: any }) {
           const isActive =
             showDetails.sessionId === session._id &&
             showDetails.imageIndex === index;
-          const lastSession = sessionIndex >= data.length - 1;
-          const lastImage = index >= session.imageAssets.length - 1;
-          const isLoaded = lastSession && lastImage;
           return (
             <div
               key={`${session._id}-${index}`}
