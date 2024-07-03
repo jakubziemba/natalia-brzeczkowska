@@ -36,6 +36,7 @@ function BlurImage({ image }: { image: any }) {
         src={image.url}
         width={calculateWidth}
         height={calculateHeight}
+        fetchPriority="high"
         placeholder="blur"
         blurDataURL={blurHash}
         alt={image.name || "photosession"}

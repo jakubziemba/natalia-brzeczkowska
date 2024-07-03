@@ -5,18 +5,8 @@
 :root {
   --color-red: #c02400;
   --nav-height: 65px;
-}
-
-@media (min-width: 768px) {
-  :root {
-    --nav-height: 71px;
-  }
-}
-
-body {
-  color: var(--color-red);
-  background-color: hsla(3, 100%, 96%, 1);
-  background-image: radial-gradient(
+  --background-color: hsla(340, 90%, 91%, 1);
+  --background-gradient: radial-gradient(
       at 37% 86%,
       hsla(356, 42%, 85%, 0.8) 20px,
       transparent 90%
@@ -25,6 +15,19 @@ body {
     radial-gradient(at 75% 60%, hsla(331, 42%, 87%, 1) 50px, transparent 40%),
     radial-gradient(at 35% 34%, hsla(300, 32%, 85%, 1) 80px, transparent 70%),
     radial-gradient(at 76% 46%, hsla(229, 80%, 85%, 1) 10px, transparent 50%);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 71px;
+  }
+}
+
+html,
+body {
+  color: var(--color-red);
+  background-color: var(--background-color);
+  background-image: var(--background-gradient);
   background-repeat: no-repeat;
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
