@@ -10,8 +10,17 @@ export async function getStaticProps() {
   const data =
     await client.fetch(groq`*[_type == "photosession" ] | order(orderRank){
     ...,
-     "imageAssets": imageAssets[].asset->url,
-     "lqip": imageAssets[].asset->metadata.lqip,
+     "imageAssets": imageAssets[].asset->{
+      url,
+      metadata{
+        lqip,
+        blurHash,
+        palette{
+          dominant
+        },
+        dimensions,
+      }
+     }
   }`);
 
   return {

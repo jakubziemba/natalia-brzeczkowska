@@ -25,7 +25,7 @@ export async function getStaticProps() {
       ...,
       "fields": fields[0]{
         ...,
-        "image": image.asset->url,
+        "image": image.asset->,
       },
     }`,
   );
@@ -70,7 +70,7 @@ export default function About({ data }) {
                 }}
               >
                 <Image
-                  src={fields?.image || ""}
+                  src={fields?.image.url || ""}
                   width={450}
                   height={700}
                   priority

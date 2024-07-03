@@ -28,7 +28,7 @@ export default function Home() {
               className="relative top-0 z-10 mx-auto flex flex-row gap-4 lg:top-14"
             >
               <StarAnimated className="invisible hidden md:visible md:block" />
-              <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 md:text-7xl xl:text-[130px]">
+              <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 md:text-7xl lg:text-8xl xl:text-[130px]">
                 <span>Natalia</span>
                 <span>Brzęczkowska</span>
               </h1>
