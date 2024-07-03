@@ -94,7 +94,7 @@ export default function Nav() {
           <ul className="invisible relative z-20 hidden text-lg font-[450] leading-none tracking-wide text-red md:visible md:flex">
             {links.map((link, index) => {
               return (
-                <li key={index} className="relative w-max">
+                <li key={link.label} className="relative w-max">
                   <NavigationLink link={link} />
                 </li>
               );
@@ -103,23 +103,23 @@ export default function Nav() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ height: bounds.height, opacity: 1 }}
+          animate={{ height: bounds.height }}
           transition={{
             type: "spring",
             bounce: 0,
-            duration: 0.4,
+            duration: showMenu ? 0.4 : 0.3,
           }}
           className="relative inset-0 flex flex-col justify-center font-[450]"
         >
-          <ul ref={ref} className="flex flex-col justify-center text-xl">
-            {showMenu && (
-              <div className="flex flex-col py-4">
+          <ul className="relative flex flex-col justify-center text-xl">
+            {showMenu ? (
+              <div ref={ref} className="flex flex-col py-4">
                 {links.map((link, index) => (
                   <motion.li
-                    key={index}
+                    key={link.label}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{
                       ease: "easeInOut",
                       duration: 0.3,
@@ -137,7 +137,7 @@ export default function Nav() {
                   </motion.li>
                 ))}
               </div>
-            )}
+            ) : null}
           </ul>
         </motion.div>
       </motion.nav>

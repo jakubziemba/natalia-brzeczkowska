@@ -4,7 +4,13 @@
 
 :root {
   --color-red: #c02400;
-  --nav-height: 71px;
+  --nav-height: 65px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 71px;
+  }
 }
 
 body {
