@@ -46,15 +46,14 @@ export default function Home() {
               <span className="relative -left-8 flex flex-row gap-4">
                 <StarAnimated />
                 <p className="mb-8 leading-relaxed">
-                  Natalia specializes in makeup for music videos, commercials
-                  and photo sessions.
+                  Creative make up artist working in industry since 2019
                 </p>
               </span>
               <span className="relative -left-8 flex flex-row gap-4">
                 <StarAnimated />
                 <p className="mb-8 leading-relaxed">
-                  She has worked with a wide variety of artists including Monika
-                  Brodka, Karaś/Rogucki, Pezet and Sonar
+                  Specializing in makeup for music videos, commercials and photo
+                  sessions.
                 </p>
               </span>
               <Link
