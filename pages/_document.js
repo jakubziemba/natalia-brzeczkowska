@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import BackgroundGradient from "@/_components/background-gradient";
 
 export default function Document() {
   return (
@@ -42,6 +43,7 @@ export default function Document() {
         <meta name="twitter:image:height" content="672" />
       </Head>
       <body>
+        <BackgroundGradient />
         <Main />
         <NextScript />
       </body>
