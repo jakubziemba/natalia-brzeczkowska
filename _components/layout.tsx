@@ -13,16 +13,19 @@ export default function Layout({
   style?: React.CSSProperties;
 }) {
   return (
-    <div className={tw("relative pt-[var(--nav-height)]")} style={style}>
+    <>
       <BackgroundGradient />
-      <Nav />
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.4 } }}
-        exit={{ opacity: 0 }}
-      >
-        {children}
-      </motion.main>
-    </div>
+
+      <div className={tw("relative pt-[var(--nav-height)]")} style={style}>
+        <Nav />
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.4 } }}
+          exit={{ opacity: 0 }}
+        >
+          {children}
+        </motion.main>
+      </div>
+    </>
   );
 }
