@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { tw } from "@/utils/tailwind";
 import Nav from "./nav";
+import BackgroundGradient from "./background-gradient";
 
 export default function Layout({
   children,
@@ -13,6 +14,7 @@ export default function Layout({
 }) {
   return (
     <div className={tw("relative pt-[var(--nav-height)]")} style={style}>
+      <BackgroundGradient />
       <Nav />
       <motion.main
         initial={{ opacity: 0 }}
