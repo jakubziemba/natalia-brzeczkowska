@@ -33,16 +33,8 @@ export default function MusicVideos({ data }) {
           <div className="relative mx-auto flex max-w-screen-lg flex-col items-center justify-center gap-24 md:px-10">
             {data.map((project, index) => {
               return (
-                <motion.div
+                <div
                   key={project._id}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ margin: "-15%", once: true }}
-                  transition={{
-                    type: "tween",
-                    ease: "easeInOut",
-                    duration: 0.25,
-                  }}
                   className="w-full max-w-screen-lg overflow-hidden"
                 >
                   <div className="min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
@@ -66,7 +58,7 @@ export default function MusicVideos({ data }) {
                       {project.artist}
                     </h3>
                   </motion.div>
-                </motion.div>
+                </div>
               );
             })}
           </div>

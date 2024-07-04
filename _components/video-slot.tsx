@@ -17,17 +17,16 @@ export default function VideoSlot({
   return (
     <motion.div
       initial={{
-        scale: 1.1,
+        transform: "scale(1.1)",
       }}
       whileInView={{
-        scale: 1,
+        transform: "scale(1)",
       }}
       transition={{
-        type: "spring",
-        bounce: 0,
-        duration: 0.8,
+        duration: 0.7,
+        ease: [0.33, 1, 0.68, 1],
       }}
-      viewport={{ margin: "-15% ", once: true }}
+      viewport={{ margin: "-30% ", once: true }}
       className={tw(
         "h-auto w-full flex-[2] origin-top cursor-pointer overflow-hidden rounded-[36px]",
         className,

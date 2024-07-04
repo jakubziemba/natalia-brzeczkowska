@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Layout from "../_components/layout";
 import MaskedShape from "../_components/masked-shape";
 import StarAnimated from "../_components/star/star-animated";
+import ButtonLink from "@/_components/button-link";
 
 const shapeSize = {
   width: 700,
@@ -56,12 +57,9 @@ export default function Home() {
                   sessions.
                 </p>
               </span>
-              <Link
-                href="/about"
-                className="flex w-max rounded-full border border-red bg-red px-10 py-3 text-xl font-[500] tracking-normal text-lightred transition-all duration-300 hover:bg-lightred hover:text-red active:scale-[0.96]"
-              >
+              <ButtonLink href="/about" className="text-xl">
                 Get to know me better
-              </Link>
+              </ButtonLink>
             </motion.div>
             <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[18%] md:left-[55%] lg:top-[-54px]">
               <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />

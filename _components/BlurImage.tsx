@@ -24,9 +24,8 @@ function BlurImage({ image }: { image: any }) {
         transform: "scale(1)",
       }}
       transition={{
-        type: "spring",
-        bounce: 0,
-        duration: 0.8,
+        duration: 0.7,
+        ease: [0.33, 1, 0.68, 1],
       }}
       viewport={{ margin: "-15% ", once: true }}
       className="relative grid h-full w-auto origin-top place-items-center overflow-hidden rounded-[36px]"
@@ -40,7 +39,7 @@ function BlurImage({ image }: { image: any }) {
         placeholder="blur"
         blurDataURL={blurHash}
         alt={image.name || "photosession"}
-        className="object-cover"
+        className="origin-top object-cover"
         style={{ aspectRatio: image.metadata.dimensions.aspectRatio }}
       />
     </motion.div>

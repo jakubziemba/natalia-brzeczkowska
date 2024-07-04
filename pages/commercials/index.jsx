@@ -37,16 +37,8 @@ export default function Commercials({ data }) {
           <div className="relative mx-auto flex max-w-screen-lg flex-col items-center justify-center gap-24 md:px-10">
             {data.map((project) => {
               return (
-                <motion.div
+                <div
                   key={project._id}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ margin: "-15%", once: true }}
-                  transition={{
-                    type: "tween",
-                    ease: "easeInOut",
-                    duration: 0.25,
-                  }}
                   className="w-full max-w-screen-lg overflow-hidden"
                 >
                   <div className="relative isolate min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
@@ -64,36 +56,10 @@ export default function Commercials({ data }) {
                       }}
                       className="relative flex-1 pt-6 font-serif text-3xl font-[450] text-red md:pt-8 md:text-4xl"
                     >
-                      {/* {client.split(" ").map((word, index) => (
-                      <span key={word}>
-                        {word.split("").map((letter, letterIndex) => (
-                          <motion.span
-                            key={letterIndex}
-                            initial={{
-                              opacity: 0,
-                              // filter: "blur(2px)"
-                            }}
-                            whileInView={{
-                              opacity: 1,
-                              //  filter: "blur(0px)"
-                            }}
-                            transition={{
-                              type: "spring",
-                              bounce: 0,
-                              duration: 0.8,
-                              delay: letterIndex * 0.02,
-                            }}
-                            // viewport={{ once: true }}
-                          >
-                            {letter}
-                          </motion.span>
-                        ))}{" "}
-                      </span>
-                    ))} */}
                       {project.client}
                     </motion.h2>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>

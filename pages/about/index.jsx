@@ -8,6 +8,7 @@ import Image from "next/image";
 import PageHeading from "@/_components/page-heading";
 import AnimatedText from "@/_components/animated-text";
 import { PortableText } from "@portabletext/react";
+import ButtonLink from "@/_components/button-link";
 
 const components = {
   block: {
@@ -99,13 +100,7 @@ export default function About({ data }) {
               }}
               className="mx-auto flex items-center justify-center py-12"
             >
-              <Link
-                href="/contact"
-                className="flex w-max rounded-full border border-red bg-red px-10 py-3 font-serif text-2xl font-[500] tracking-normal text-lightred transition-all duration-300 hover:bg-lightred hover:text-red active:scale-[0.96]"
-                scroll={false}
-              >
-                Get in touch
-              </Link>
+              <ButtonLink href="/contact">Get in touch</ButtonLink>
             </motion.div>
           </div>
         </section>
