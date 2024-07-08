@@ -49,9 +49,9 @@ export default function MusicVideos({ data }) {
                       ease: "easeInOut",
                       duration: 0.25,
                     }}
-                    className="flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 pt-6 font-serif font-[350] tracking-tight text-red md:gap-4 md:px-0 lg:min-w-80"
+                    className="flex w-full min-w-80 flex-1 flex-col justify-center gap-2 text-balance px-4 pt-6 font-serif font-normal tracking-tight text-red md:gap-4 md:px-0 lg:min-w-80"
                   >
-                    <h2 className="relative flex-1 font-serif text-3xl text-red md:text-5xl">
+                    <h2 className="relative flex-1 font-serif text-3xl text-red lg:text-5xl">
                       {project.videoTitle}
                     </h2>
                     <h3 className="min-w-64 text-xl font-normal leading-snug md:text-2xl">

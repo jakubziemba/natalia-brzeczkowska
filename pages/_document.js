@@ -46,7 +46,7 @@ export default function Document() {
         <meta name="twitter:image:width" content="1200" />
         <meta name="twitter:image:height" content="672" />
       </Head>
-      <body>
+      <body className="antialiased">
         <BackgroundGradient />
         <Main />
         <NextScript />

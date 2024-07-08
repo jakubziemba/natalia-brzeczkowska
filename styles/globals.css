@@ -27,7 +27,6 @@
 html,
 body {
   color: var(--color-red);
-  font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
 }
@@ -35,6 +34,7 @@ body {
 svg {
   shape-rendering: geometricPrecision;
   font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer utilities {

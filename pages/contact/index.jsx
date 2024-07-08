@@ -7,7 +7,7 @@ import PageHeading from "@/_components/page-heading";
 export default function Contact() {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
+  const handleCopyEmail = () => {
     if (copied) return;
 
     navigator.clipboard.writeText("nbrzeczkowska@gmail.com");
@@ -65,7 +65,7 @@ export default function Contact() {
                   duration: 0.3,
                   delay: 0.07,
                 }}
-                onClick={() => handleCopy()}
+                onClick={() => handleCopyEmail()}
                 className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4 transition-all duration-[200ms] hover:font-[450] active:scale-[0.98]"
               >
                 nbrzeczkowska@gmail.com

@@ -94,7 +94,7 @@ export default function Nav() {
           <ul className="invisible relative z-20 hidden text-lg font-normal leading-none tracking-normal text-red md:visible md:flex">
             {links.map((link, index) => {
               return (
-                <li key={link.label} className="relative w-max font-[350]">
+                <li key={link.label} className="relative w-max font-normal">
                   <NavigationLink link={link} />
                 </li>
               );
@@ -125,7 +125,7 @@ export default function Nav() {
                       duration: 0.3,
                       delay: 0.12 + 0.03 * index,
                     }}
-                    className="py-2 font-[350] text-red"
+                    className="py-2 font-normal text-red"
                   >
                     <Link
                       href={link.href}

@@ -81,7 +81,7 @@ export default function About({ data }) {
               </motion.div>
             </motion.div>
             <div className="flex flex-1 flex-col gap-4 py-12">
-              <div className="max-w-xl space-y-16 text-pretty text-center font-serif text-3xl font-light leading-normal tracking-[-0.015em]  md:max-w-2xl md:text-[42px] md:leading-normal">
+              <div className="max-w-xl space-y-16 text-pretty text-center font-serif text-3xl font-normal leading-normal tracking-[-0.015em] md:max-w-2xl md:text-[42px] md:leading-normal">
                 <PortableText
                   value={fields.description}
                   components={components}
