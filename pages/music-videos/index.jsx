@@ -84,13 +84,13 @@ export default function MusicVideos({ data }) {
                 ))}
               </div>
             </div>
-            <div className="w-full max-w-2xl">
+            <div className="w-full max-w-4xl">
               <ul>
                 {data.map((project, index) => (
                   <li
                     key={project._id}
                     ref={(el) => (listItemRefs.current[index] = el)}
-                    className="flex flex-col gap-4 py-[20vh] transition-opacity duration-300 first:pt-[25vh] last:pb-[10vh]"
+                    className="flex flex-col gap-4 py-[15vh] transition-opacity duration-300 first:pt-[25vh] last:pb-[10vh]"
                   >
                     <h2 className="font-serif text-3xl text-red lg:text-5xl">
                       {project.videoTitle}
