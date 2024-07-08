@@ -58,7 +58,7 @@ export default function About({ data }) {
             >
               <motion.div
                 initial={{
-                  scale: 1.1,
+                  scale: 1.15,
                 }}
                 animate={{
                   scale: 1,
@@ -73,7 +73,7 @@ export default function About({ data }) {
                   src={fields?.image.url || ""}
                   width={450}
                   height={700}
-                  priority
+                  priority={true}
                   loading="eager"
                   alt="Natalia Brzęczkowska"
                   className="h-auto w-full max-w-2xl flex-1 object-cover"
@@ -97,7 +97,7 @@ export default function About({ data }) {
                 ease: "easeInOut",
                 duration: 0.5,
               }}
-              className="mx-auto flex items-center justify-center py-12"
+              className="mx-auto flex items-center justify-center pb-12"
             >
               <ButtonLink href="/contact">Get in touch</ButtonLink>
             </motion.div>
