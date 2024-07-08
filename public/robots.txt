@@ -1,5 +1,3 @@
-//robots.txt
-
 # Block all crawlers for /studio
 User-agent: *
 Disallow: /studio

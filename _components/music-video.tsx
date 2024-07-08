@@ -25,12 +25,12 @@ export default function MusicVideo({
           ease: "easeInOut",
           duration: 0.3,
         }}
-        className="flex w-full min-w-80 flex-1 flex-col justify-center text-balance px-4 font-serif text-red md:gap-4 md:px-0 lg:min-w-80 "
+        className="flex w-full min-w-80 flex-1 flex-col justify-center text-balance px-4 font-serif tracking-tight text-red md:gap-4 md:px-0 lg:min-w-80 "
       >
         <h2 className="min-w-64 text-2xl font-medium leading-[1.1] md:text-5xl">
           {project.videoTitle}
         </h2>
-        <h3 className="font-regular mt-4 min-w-64 text-base leading-snug md:text-2xl">
+        <h3 className="mt-4 min-w-64 text-base font-normal leading-snug md:text-2xl">
           {project.artist}
         </h3>
       </motion.div>

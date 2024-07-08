@@ -13,10 +13,11 @@ const paths = [initialPath, finalPath];
 
 export default function MaskedShape({ width, image }: MaskedShapeProps) {
   const { height } = useWindowSize();
+
   return (
     <motion.svg
       width={width}
-      height={700}
+      height={750}
       viewBox="0 0 500 640"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -33,12 +34,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         delay: 0,
         ease: [0.14, 0.18, 0.21, 0.72],
       }}
-      className="h-auto max-w-sm md:max-w-lg lg:max-w-2xl"
-      style={
-        {
-          // transform: "rotate(-8.2deg)",
-        }
-      }
+      className="h-auto max-w-sm origin-center md:max-w-lg lg:max-w-2xl"
     >
       <defs>
         <mask id="shape-mask">
@@ -56,21 +52,14 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
                   delay: 0.1,
                   repeat: Infinity,
                   repeatType: "loop",
-                  // ease: [0.3, 0.1, 0.6, 0.1],
                   ease: "easeInOut",
                 },
                 scale: {
                   duration: 1.5,
-                  // ease: [0.3, 0.1, 0.6, 0.8],
                   ease: "easeOut",
                 },
               },
             }}
-            style={
-              {
-                // transform: "rotate(-8.2deg)",
-              }
-            }
           />
         </mask>
 

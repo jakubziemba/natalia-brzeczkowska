@@ -24,10 +24,6 @@
   }
 }
 
-html {
-  background-color: var(--background-color);
-}
-
 html,
 body {
   color: var(--color-red);

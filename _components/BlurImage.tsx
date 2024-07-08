@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 function BlurImage({ image }: { image: any }) {
   const calculateWidth =
-    image.metadata.dimensions.width > 2000
+    image.metadata.dimensions.width > 1500
       ? image.metadata.dimensions.width / 2
       : image.metadata.dimensions.width;
   const calculateHeight =
-    image.metadata.dimensions.height > 2000
+    image.metadata.dimensions.height > 1500
       ? image.metadata.dimensions.height / 2
       : image.metadata.dimensions.height;
 
@@ -33,13 +33,14 @@ function BlurImage({ image }: { image: any }) {
     >
       <Image
         src={image.url}
-        width={calculateWidth}
-        height={calculateHeight}
+        width={image.metadata.dimensions.width}
+        height={image.metadata.dimensions.height}
         quality={75}
         loading="lazy"
         placeholder="blur"
         blurDataURL={blurHash}
         alt={image.name || "photosession"}
+        sizes="(max-width: 768px) 100vw, 768px"
         className="origin-top object-cover"
         style={{ aspectRatio: image.metadata.dimensions.aspectRatio }}
       />

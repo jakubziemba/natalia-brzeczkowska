@@ -54,7 +54,7 @@ export default function Commercials({ data }) {
                         ease: "easeInOut",
                         duration: 0.25,
                       }}
-                      className="relative flex-1 pt-6 font-serif text-3xl font-[450] text-red md:pt-8 md:text-4xl"
+                      className="relative flex-1 pt-6 font-serif text-3xl font-[350] text-red md:pt-8 md:text-4xl"
                     >
                       {project.client}
                     </motion.h2>
@@ -63,7 +63,7 @@ export default function Commercials({ data }) {
               );
             })}
           </div>
-          <div className="mx-auto max-w-screen-lg pb-24 pt-36 text-center font-serif text-4xl font-[450] leading-normal md:px-10 lg:text-5xl lg:leading-normal 2xl:max-w-2xl 2xl:px-10">
+          <div className="mx-auto max-w-screen-lg pb-24 pt-36 text-center font-serif text-4xl font-[350] leading-normal md:px-10 lg:text-5xl lg:leading-normal 2xl:max-w-2xl 2xl:px-10">
             <AnimatedText>
               <h4 className="mx-auto w-full max-w-2xl">
                 Assisted in commercials of Play, VISA, Santander, Google,

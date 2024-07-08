@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 
 // ZODIAK & PUBLIC SANS?
 const serif = localFont({
-  src: "../public/fonts/Boska.woff2",
+  src: "../public/fonts/FrankRuhlLibre.woff2",
   display: "swap",
   variable: "--font-serif",
 });

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { set } from "sanity";
 
 export default function NavigationLink({ link }: { link: any }) {
   const [isHovered, setIsHovered] = useState(false);

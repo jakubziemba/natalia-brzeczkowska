@@ -6,6 +6,10 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta
+          name="description"
+          content="A Warsaw-based make up artist, working since 2019 in many industry sectors including TV, theatre, fashion and film."
+        />
+        <meta
           property="description"
           content="A Warsaw-based make up artist, working since 2019 in many industry sectors including TV, theatre, fashion and film."
         />

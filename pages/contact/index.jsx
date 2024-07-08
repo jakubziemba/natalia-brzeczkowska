@@ -31,22 +31,9 @@ export default function Contact() {
       </Head>
       <Layout>
         <section className="min-h-[calc(100vh-var(--nav-height))] px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
-          <PageHeading>Want to talk?</PageHeading>
+          <PageHeading>Get in touch</PageHeading>
 
-          <div className="flex flex-1 flex-col justify-center gap-20 text-center font-serif text-3xl font-[450] lg:text-6xl">
-            {/* <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              type: "tween",
-              ease: "easeInOut",
-              duration: 0.2,
-              delay: 0.05,
-            }}
-            className="flex flex-col gap-6 text-6xl"
-          >
-            Want to talk?
-          </motion.h2> */}
+          <div className="flex flex-1 flex-col gap-20 text-center font-serif text-3xl font-[350] lg:text-6xl">
             <div className="flex flex-col gap-4">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -72,11 +59,6 @@ export default function Contact() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                whileTap={{
-                  scale: 0.98,
-                  transition: { delay: 0, duration: 0.3, ease: "easeInOut" },
-                }}
-                whileHover={{ fontWeight: 550, transition: { duration: 0.25 } }}
                 transition={{
                   type: "tween",
                   ease: "easeInOut",
@@ -84,7 +66,7 @@ export default function Contact() {
                   delay: 0.07,
                 }}
                 onClick={() => handleCopy()}
-                className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4"
+                className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4 transition-all duration-[200ms] hover:font-[450] active:scale-[0.98]"
               >
                 nbrzeczkowska@gmail.com
               </motion.p>
@@ -102,12 +84,12 @@ export default function Contact() {
             >
               <h3>Social:</h3>
               <ul className="flex flex-col gap-4">
-                <li className="cursor-pointer transition-all duration-300 hover:font-[550]">
+                <li className="cursor-pointer bg-clip-text transition-all duration-[200ms] hover:font-[450]">
                   <a href="https://www.instagram.com/nati.makeupik/">
                     Instagram
                   </a>
                 </li>
-                <li className="cursor-pointer transition-all duration-300 hover:font-[550]">
+                <li className="cursor-pointer transition-all duration-150 hover:font-[450]">
                   <a href="https://filmpolski.pl/fp/index.php?osoba=11194834">
                     Film Polski
                   </a>

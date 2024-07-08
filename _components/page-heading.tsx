@@ -16,7 +16,7 @@ export default function PageHeading({ children }: { children: string }) {
             damping: 18,
           },
         }}
-        className="mx-auto font-serif text-6xl font-[450] text-red"
+        className="mx-auto font-serif text-5xl font-[350] tracking-tight text-red md:text-6xl"
       >
         {children}
       </motion.h1>

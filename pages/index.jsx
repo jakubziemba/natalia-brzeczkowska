@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Layout from "../_components/layout";
 import MaskedShape from "../_components/masked-shape";
@@ -29,7 +28,7 @@ export default function Home() {
               className="relative top-0 z-10 mx-auto flex flex-row gap-4 lg:top-14"
             >
               <StarAnimated className="invisible hidden md:visible md:block" />
-              <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl leading-[1] tracking-[-0.02em] text-red md:flex-row md:justify-center md:gap-4 md:text-7xl lg:text-8xl xl:text-[130px]">
+              <h1 className="flex h-full w-max flex-col justify-between gap-96 text-center font-serif text-6xl font-light leading-[1] tracking-tight text-red md:flex-row md:justify-center md:gap-4 md:text-7xl lg:text-8xl xl:text-[130px]">
                 <span>Natalia</span>
                 <span>Brzęczkowska</span>
               </h1>
@@ -42,7 +41,7 @@ export default function Home() {
                 delay: 1.5,
                 ease,
               }}
-              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-[450] tracking-wide text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col lg:top-20"
+              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center font-serif text-xl font-normal tracking-normal text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col lg:top-20"
             >
               <span className="relative -left-8 flex flex-row gap-4">
                 <StarAnimated />
@@ -57,11 +56,11 @@ export default function Home() {
                   sessions.
                 </p>
               </span>
-              <ButtonLink href="/about" className="text-xl">
+              <ButtonLink href="/about" className="text-xl" scroll={false}>
                 Get to know me better
               </ButtonLink>
             </motion.div>
-            <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[18%] md:left-[55%] lg:top-[-54px]">
+            <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[18%] md:left-[55%] lg:top-[-54px] 2xl:left-[40%]">
               <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
             </motion.div>
           </div>
