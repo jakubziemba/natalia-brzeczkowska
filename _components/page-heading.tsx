@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import StarAnimated from "./star/star-animated";
 
 export default function PageHeading({ children }: { children: string }) {
   return (
-    <div className="relative z-10 flex justify-center overflow-hidden py-16 pb-20 md:pb-24">
+    <div className="relative -left-4 z-10 flex justify-center gap-2 overflow-hidden py-16 pb-20 md:pb-24 lg:-left-8 lg:gap-4">
+      <StarAnimated delay={1} />
       <motion.h1
         // initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -16,7 +18,7 @@ export default function PageHeading({ children }: { children: string }) {
             damping: 18,
           },
         }}
-        className="mx-auto font-serif text-5xl font-[350] tracking-tight text-red md:text-6xl"
+        className="text-5xl text-red md:text-6xl lg:text-7xl xl:text-8xl xl:tracking-[-0.04em]"
       >
         {children}
       </motion.h1>

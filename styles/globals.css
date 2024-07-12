@@ -4,9 +4,10 @@
 
 :root {
   --color-red: #c02400;
+  --color-lightred: #ffedec;
+  --color-white: #ffffff;
   --nav-height: 65px;
   --background-color: hsla(336, 98%, 96%, 1);
-  /* --background-color: #feecf3; */
   --background-gradient-fallback: radial-gradient(
       at 37% 86%,
       hsla(336, 100%, 92%, 1) 20px,
@@ -29,12 +30,32 @@ body {
   color: var(--color-red);
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
+  font-weight: 300;
 }
 
 svg {
   shape-rendering: geometricPrecision;
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 480;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+p,
+a {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: -0.04em;
 }
 
 @layer utilities {

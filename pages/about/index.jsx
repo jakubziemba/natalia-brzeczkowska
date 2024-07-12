@@ -7,7 +7,7 @@ import Image from "next/image";
 import PageHeading from "@/_components/page-heading";
 import AnimatedText from "@/_components/animated-text";
 import { PortableText } from "@portabletext/react";
-import ButtonLink from "@/_components/button-link";
+import LinkButton from "@/_components/button-link";
 
 const components = {
   block: {
@@ -81,7 +81,7 @@ export default function About({ data }) {
               </motion.div>
             </motion.div>
             <div className="flex flex-1 flex-col gap-4 py-12">
-              <div className="max-w-xl space-y-16 text-pretty text-center font-serif text-3xl font-normal leading-normal tracking-[-0.015em] md:max-w-2xl md:text-[42px] md:leading-normal">
+              <div className="max-w-xl space-y-16 text-pretty text-center font-sans text-3xl leading-normal md:max-w-2xl md:text-[38px] md:leading-normal lg:text-5xl lg:leading-snug">
                 <PortableText
                   value={fields.description}
                   components={components}
@@ -99,7 +99,7 @@ export default function About({ data }) {
               }}
               className="mx-auto flex items-center justify-center pb-12"
             >
-              <ButtonLink href="/contact">Get in touch</ButtonLink>
+              <LinkButton href="/contact">Get in touch</LinkButton>
             </motion.div>
           </div>
         </section>

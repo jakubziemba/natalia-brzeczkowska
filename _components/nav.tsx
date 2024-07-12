@@ -2,10 +2,10 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { useMediaQuery } from "usehooks-ts";
 import {
-  AnimatePresence,
   motion,
   useScroll,
   useMotionValueEvent,
+  AnimatePresence,
 } from "framer-motion";
 import NavigationLink from "./link";
 import useMeasure from "react-use-measure";
@@ -73,37 +73,36 @@ export default function Nav() {
           },
         }}
         transition={{ duration: 0.2 }}
-        className="mx-auto flex max-w-6xl flex-col border-b border-red/5 bg-white py-4 pl-6 pr-3 font-serif text-lg 2xl:mx-auto"
+        className="mx-auto flex max-w-6xl flex-col border-b border-red/5 bg-white py-4 pl-6 pr-3 font-sans 2xl:mx-auto"
         style={{ borderRadius: "36px" }}
       >
         <div className="flex flex-row items-center justify-between">
           <Link
             href="/"
-            className="flex w-max font-serif text-2xl font-normal tracking-tight text-red transition-all duration-300 active:scale-[0.96]"
+            className="flex w-max font-serif text-[28px] font-[450] tracking-[-0.01em] text-red transition-all duration-300 active:scale-[0.96]"
           >
             Nati Makeupik
           </Link>
           {isMobile ? (
             <button
-              className="rounded-full bg-lightred px-4 py-1.5 tracking-normal text-red md:invisible md:hidden"
+              className="rounded-full bg-lightred px-4 py-1.5 text-red md:invisible md:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
               <span>{showMenu ? "Close" : "Menu"}</span>
             </button>
           ) : null}
-          <ul className="invisible relative z-20 hidden text-lg font-normal leading-none tracking-normal text-red md:visible md:flex">
+          <ul className="invisible relative z-20 hidden leading-none tracking-normal text-red md:visible md:flex">
             {links.map((link, index) => {
               return (
-                <li key={link.label} className="relative w-max font-normal">
+                <li key={link.label} className="relative w-max">
                   <NavigationLink link={link} />
                 </li>
               );
             })}
           </ul>
         </div>
-
         <motion.div
-          animate={{ height: bounds.height }}
+          animate={{ height: showMenu ? bounds.height : 0 }}
           transition={{
             type: "spring",
             bounce: 0,
@@ -111,9 +110,9 @@ export default function Nav() {
           }}
           className="relative inset-0 flex flex-col justify-center"
         >
-          <ul className="relative flex flex-col justify-center text-xl">
+          <ul className="relative flex flex-col justify-center">
             {showMenu ? (
-              <div ref={ref} className="flex flex-col py-4 tracking-tighter">
+              <div ref={ref} className="flex flex-col py-4">
                 {links.map((link, index) => (
                   <motion.li
                     key={link.label}
@@ -125,13 +124,12 @@ export default function Nav() {
                       duration: 0.3,
                       delay: 0.12 + 0.03 * index,
                     }}
-                    className="py-2 font-normal text-red"
+                    className="py-2 text-red"
                   >
                     <Link
                       href={link.href}
-                      className="flex w-full flex-col overflow-hidden py-2 font-serif text-4xl"
+                      className="flex w-full flex-col overflow-hidden py-2 font-sans text-3xl"
                       onClick={() => setShowMenu(!showMenu)}
-                      scroll={false}
                     >
                       {link.label}
                     </Link>

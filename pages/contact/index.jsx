@@ -33,7 +33,7 @@ export default function Contact() {
         <section className="min-h-[calc(100vh-var(--nav-height))] px-4 2xl:mx-auto 2xl:max-w-screen-2xl 2xl:px-0">
           <PageHeading>Get in touch</PageHeading>
 
-          <div className="flex flex-1 flex-col gap-20 text-center font-serif text-3xl font-[350] lg:text-6xl">
+          <div className="flex flex-1 flex-col gap-20 text-center text-3xl lg:text-6xl">
             <div className="flex flex-col gap-4">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -66,7 +66,7 @@ export default function Contact() {
                   delay: 0.07,
                 }}
                 onClick={() => handleCopyEmail()}
-                className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4 transition-all duration-[200ms] hover:font-[450] active:scale-[0.98]"
+                className="group relative mx-auto block w-max cursor-pointer overflow-hidden py-4 text-2xl font-normal transition-all duration-[200ms] md:text-5xl lg:text-6xl lg:hover:scale-[1.02] lg:active:scale-[0.98]"
               >
                 nbrzeczkowska@gmail.com
               </motion.p>
@@ -80,16 +80,16 @@ export default function Contact() {
                 duration: 0.34,
                 delay: 0.12,
               }}
-              className="flex flex-col gap-10 text-4xl lg:text-5xl"
+              className="flex flex-col gap-10 text-3xl lg:text-5xl"
             >
               <h3>Social:</h3>
-              <ul className="flex flex-col gap-4">
-                <li className="cursor-pointer bg-clip-text transition-all duration-[200ms] hover:font-[450]">
+              <ul className="flex flex-col gap-2 lg:gap-4">
+                <li className="cursor-pointer transition-all duration-[200ms] lg:hover:scale-[1.02] lg:active:scale-[0.98]">
                   <a href="https://www.instagram.com/nati.makeupik/">
                     Instagram
                   </a>
                 </li>
-                <li className="cursor-pointer transition-all duration-150 hover:font-[450]">
+                <li className="cursor-pointer transition-all duration-[200ms] hover:font-[450] lg:hover:scale-[1.02] lg:active:scale-[0.98]">
                   <a href="https://filmpolski.pl/fp/index.php?osoba=11194834">
                     Film Polski
                   </a>

@@ -62,10 +62,10 @@ export default function ImageGallery({ data }: { data: any }) {
                 )}
               >
                 <div className="pointer-events-none relative p-6 font-light">
-                  <p className="font-serif text-3xl tracking-[-0.015em] md:text-4xl lg:text-5xl">
+                  <p className="font-sans text-3xl tracking-[-0.015em] md:text-4xl lg:text-5xl">
                     {session.name}
                   </p>
-                  <p className="font-serif tracking-tight text-white/80 md:text-sm lg:text-lg">
+                  <p className="font-sans tracking-tight text-white/80 md:text-sm lg:text-lg">
                     photos: {session.photosAuthor}
                   </p>
                   {session.name && session.photosAuthor ? (

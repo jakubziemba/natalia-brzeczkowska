@@ -5,19 +5,23 @@ import { motion } from "framer-motion";
 
 type StarAnimatedProps = {
   className?: string;
+  delay?: number;
 };
 
-export default function StarAnimated({ className }: StarAnimatedProps) {
+export default function StarAnimated({
+  className,
+  delay = 1.5,
+}: StarAnimatedProps) {
   return (
     <motion.div
-      animate={{
+      whileInView={{
         rotate: "360deg",
         transition: {
           type: "spring",
           bounce: 0,
           duration: 3,
           repeat: Infinity,
-          delay: 2,
+          delay: delay,
         },
       }}
       className={`${className || ""} h-full w-max origin-center`}

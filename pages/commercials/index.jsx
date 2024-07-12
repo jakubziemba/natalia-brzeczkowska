@@ -44,7 +44,7 @@ export default function Commercials({ data }) {
                   <div className="relative isolate min-h-[190px] overflow-hidden rounded-[36px] shadow-red/5 lg:min-h-[400px]">
                     <VideoSlot project={project} />
                   </div>
-                  <div className="pt-6">
+                  <div className="max-w-[90%] pt-6">
                     <motion.h2
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
@@ -54,7 +54,7 @@ export default function Commercials({ data }) {
                         ease: "easeInOut",
                         duration: 0.25,
                       }}
-                      className="relative flex-1 pb-1 font-serif text-3xl font-normal tracking-[-0.01em] text-red lg:text-5xl"
+                      className="relative flex-1 pb-1 text-3xl tracking-tight text-red lg:text-5xl lg:leading-snug"
                     >
                       {project.client}
                     </motion.h2>
@@ -63,9 +63,9 @@ export default function Commercials({ data }) {
               );
             })}
           </div>
-          <div className="mx-auto max-w-screen-lg pb-24 pt-36 text-center font-serif text-4xl font-normal leading-tight md:px-10 lg:text-5xl lg:leading-snug 2xl:max-w-2xl 2xl:px-10">
+          <div className="mx-auto max-w-screen-lg px-4 pb-24 pt-36 text-center text-4xl leading-normal md:px-10 lg:text-[42px] lg:leading-normal xl:text-6xl xl:leading-tight">
             <AnimatedText>
-              <h4 className="mx-auto w-full max-w-2xl">
+              <h4 className="mx-auto w-full max-w-2xl text-pretty lg:max-w-3xl">
                 Assisted in commercials of Play, VISA, Santander, Google,
                 Biedronka, Fanta, Media Expert, Eurosport, Huawei, BMW, Redbull,
                 H&M, Lewiatan and many more.
