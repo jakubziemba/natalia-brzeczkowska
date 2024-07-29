@@ -11,7 +11,6 @@ const shapeSize = {
   height: 700,
 };
 const ease = [0.17, 0, 0.55, 1];
-const MotionButton = motion(LinkButton);
 
 export default function Home() {
   return (
@@ -34,22 +33,7 @@ export default function Home() {
                 <span>Brzęczkowska</span>
               </h1>
             </motion.div>
-            <motion.div
-              // initial="initial"
-              // animate="animate"
-              // variants={{
-              //   initial: { opacity: 0 },
-              //   animate: {
-              //     opacity: 1,
-              //     transition: {
-              //       duration: 0.5,
-              //       delay: DELAY,
-              //       ease,
-              //     },
-              //   },
-              // }}
-              className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center text-xl text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col lg:top-20"
-            >
+            <motion.div className="invisible relative -left-20 top-20 z-20 hidden max-w-xs flex-row items-stretch justify-between self-center text-xl text-red md:visible md:-left-16 md:top-10 md:flex md:flex-col lg:top-20">
               <motion.span
                 custom={1}
                 initial="initial"
@@ -93,7 +77,7 @@ export default function Home() {
               >
                 <StarAnimated />
                 <p className="mb-8 leading-relaxed">
-                  Specializing in both beauty and art make up. Able to do fx
+                  Specializing in both beauty and art make up. Able to do sFX
                   make up and hair when needed.
                 </p>
               </motion.span>
