@@ -70,7 +70,7 @@ export default function Home() {
               >
                 <StarAnimated />
                 <p className="mb-8 leading-relaxed">
-                  Creative make up artist working in industry since 2019
+                  Creative make up artist working on set since 2019
                 </p>
               </motion.span>
               <motion.span
@@ -93,8 +93,8 @@ export default function Home() {
               >
                 <StarAnimated />
                 <p className="mb-8 leading-relaxed">
-                  Specializing in makeup for music videos, commercials and photo
-                  sessions.
+                  Specializing in both beauty and art make up. Able to do fx
+                  make up and hair when needed.
                 </p>
               </motion.span>
               <motion.div
