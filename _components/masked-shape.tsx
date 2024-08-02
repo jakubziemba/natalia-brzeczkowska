@@ -9,7 +9,7 @@ const initialPath =
 const finalPath =
   "M238.136 30.0048C303.665 50.3851 304.255 64.2111 328.46 50.055C346.17 40.6207 382.438 44.2467 418.193 74.7319C453.786 105.079 494.328 156.73 489.626 208.704C484.253 268.089 425.278 272.398 418.193 326.068C413.833 359.097 403.434 425.746 372.379 425.746C330.821 425.746 361.314 522.058 342.369 547.821C323.393 573.625 302.484 561.387 286.285 582.618C253.435 625.672 209.417 629.533 164.673 604.439C112.818 575.359 164.748 539.736 128.493 486.713C104.237 451.24 38.4048 507.676 15.5723 470.877C-5.71991 436.56 40.7386 390.941 42.5921 348.266C44.1045 313.443 14.5242 279.288 25.3007 246.887C36.2763 213.887 78.9609 213.689 96.7967 185.294C116.926 153.248 91.3819 137.345 111.21 64.2111C123.681 18.209 175.558 10.5425 238.136 30.0048Z";
 
-const paths = [initialPath, finalPath];
+const paths = [initialPath, finalPath, initialPath];
 
 export default function MaskedShape({ width, image }: MaskedShapeProps) {
   const { height } = useWindowSize();
@@ -34,7 +34,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         delay: 0,
         ease: [0.14, 0.18, 0.21, 0.72],
       }}
-      className="h-auto max-w-sm origin-center md:max-w-lg lg:max-w-2xl"
+      className="h-auto max-w-sm md:max-w-lg lg:max-w-2xl"
     >
       <defs>
         <mask id="shape-mask">
@@ -42,38 +42,45 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
             fillRule="evenodd"
             clipRule="evenodd"
             fill="white"
-            initial={{ scale: 0.8 }}
+            initial={{ scale: 0.8, d: initialPath }}
             animate={{
-              d: [...paths, paths[0]],
+              d: paths,
               scale: 1,
-              transition: {
-                d: {
-                  duration: 13,
-                  delay: 0.1,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                },
-                scale: {
-                  duration: 1.5,
-                  ease: "easeOut",
-                },
+            }}
+            transition={{
+              d: {
+                duration: 13,
+                times: [0, 0.5, 1],
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              },
+              scale: {
+                duration: 1.5,
+                ease: "easeOut",
               },
             }}
           />
         </mask>
 
-        <image
+        <motion.image
+          initial={{ rotate: -8.2, scale: 0.84 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{ type: "spring", duration: 2.5, bounce: 0 }}
           id="image"
           href={image}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
+          width="100%"
+          height="100%"
+          preserveAspectRatio="xMidYMid slice"
         />
       </defs>
 
-      <use xlinkHref="#image" mask="url(#shape-mask)" className="w-full" />
+      <use
+        xlinkHref="#image"
+        mask="url(#shape-mask)"
+        width="100%"
+        height="100%"
+      />
     </motion.svg>
   );
 }

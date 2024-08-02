@@ -104,7 +104,7 @@ export default function Home() {
                 </LinkButton>
               </motion.div>
             </motion.div>
-            <motion.div className="absolute inset-0 z-0 flex flex-col items-center justify-center md:visible md:-top-[18%] md:left-[55%] lg:top-[-54px] 2xl:left-[40%]">
+            <motion.div className="absolute inset-0 z-0 flex origin-center flex-col items-center justify-center md:visible md:-top-[18%] md:left-[55%] lg:top-[-54px] 2xl:left-[40%]">
               <MaskedShape width={shapeSize.width} image={"/DariaIrena.jpeg"} />
             </motion.div>
           </div>
