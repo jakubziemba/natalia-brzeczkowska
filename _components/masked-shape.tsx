@@ -64,7 +64,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         </mask>
 
         <motion.image
-          initial={{ rotate: -8.2, scale: 0.84 }}
+          initial={{ rotate: 2, scale: 1.2 }}
           animate={{ rotate: 0, scale: 1 }}
           transition={{ type: "spring", duration: 2.5, bounce: 0 }}
           id="image"
