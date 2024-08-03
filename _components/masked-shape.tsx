@@ -58,8 +58,10 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
                 ease: "easeInOut",
               },
               scale: {
-                duration: 1.5,
-                ease: "easeOut",
+                type: "spring",
+                duration: 3.6,
+                bounce: 0.15,
+                // ease: "easeOut",
               },
             }}
           />
@@ -76,7 +78,11 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
       <motion.use
         initial={{ rotate: 4, scale: 1.2 }}
         animate={{ rotate: 0, scale: 1 }}
-        transition={{ type: "spring", duration: 2.4, bounce: 0.15 }}
+        transition={{
+          type: "spring",
+          duration: 2.4,
+          bounce: 0.25,
+        }}
         xlinkHref="#image"
         mask="url(#shape-mask)"
         width="100%"
