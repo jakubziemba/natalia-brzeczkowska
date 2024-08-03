@@ -68,6 +68,7 @@ export default function About({ data }) {
                   bounce: 0,
                   duration: 1,
                 }}
+                style={{ minHeight: 400 }}
               >
                 <Image
                   src={fields?.image.url || ""}
