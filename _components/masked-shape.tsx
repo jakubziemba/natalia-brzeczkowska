@@ -23,18 +23,20 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
       xmlns="http://www.w3.org/2000/svg"
       initial={{
         opacity: 0,
-        transform: "rotate(-8.2deg)",
+        scale: 0.8,
       }}
       animate={{
         opacity: 1,
         scale: 1,
       }}
       transition={{
-        duration: 1.2,
+        type: "spring",
+        duration: 2.4,
         delay: 0,
-        ease: [0.14, 0.18, 0.21, 0.72],
+        // ease: [0.14, 0.18, 0.21, 0.72],
       }}
       className="h-auto max-w-sm md:max-w-lg lg:max-w-2xl"
+      style={{ rotate: "-8.2deg" }}
     >
       <defs>
         <mask id="shape-mask">
@@ -42,7 +44,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
             fillRule="evenodd"
             clipRule="evenodd"
             fill="white"
-            initial={{ scale: 0.8, d: initialPath }}
+            initial={{ scale: 0.2, d: initialPath }}
             animate={{
               d: paths,
               scale: 1,
@@ -62,11 +64,7 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
             }}
           />
         </mask>
-
-        <motion.image
-          initial={{ rotate: 2, scale: 1.2 }}
-          animate={{ rotate: 0, scale: 1 }}
-          transition={{ type: "spring", duration: 2.8, bounce: 0 }}
+        <image
           id="image"
           href={image}
           width="100%"
@@ -75,7 +73,10 @@ export default function MaskedShape({ width, image }: MaskedShapeProps) {
         />
       </defs>
 
-      <use
+      <motion.use
+        initial={{ rotate: 4, scale: 1.2 }}
+        animate={{ rotate: 0, scale: 1 }}
+        transition={{ type: "spring", duration: 2.4, bounce: 0.15 }}
         xlinkHref="#image"
         mask="url(#shape-mask)"
         width="100%"

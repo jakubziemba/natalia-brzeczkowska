@@ -83,14 +83,12 @@ export default function Nav() {
           >
             Nati Makeupik
           </Link>
-          {isMobile ? (
-            <button
-              className="rounded-full bg-lightred px-4 py-1.5 text-red md:invisible md:hidden"
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              <span>{showMenu ? "Close" : "Menu"}</span>
-            </button>
-          ) : null}
+          <button
+            className="rounded-full bg-lightred px-4 py-1.5 text-red md:invisible md:hidden"
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            <span>{showMenu ? "Close" : "Menu"}</span>
+          </button>
           <ul className="invisible relative z-20 hidden leading-none tracking-normal text-red md:visible md:flex">
             {links.map((link, index) => {
               return (
